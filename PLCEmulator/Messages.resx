@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msgClose" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="msgConstant" xml:space="preserve">
+    <value>stałoprocentowy</value>
+  </data>
+  <data name="msgCoolDownParameters" xml:space="preserve">
+    <value>Parametry toru stygnięcia</value>
+  </data>
+  <data name="msgCooling" xml:space="preserve">
+    <value>Chłodzenie</value>
+    <comment>Opis dla etykiety chłodzenie.</comment>
+  </data>
+  <data name="msgCoolingParameters" xml:space="preserve">
+    <value>Parametry toru chłodzenia</value>
+  </data>
+  <data name="msgCoolingWaterTemperature" xml:space="preserve">
+    <value>Temperatura wody chłodzącej</value>
+  </data>
+  <data name="msgDelay" xml:space="preserve">
+    <value>Opóżnienie</value>
+  </data>
+  <data name="msgEmptying" xml:space="preserve">
+    <value>Opróżnianie</value>
+    <comment>Opis dla etykiety opróżnianie.</comment>
+  </data>
+  <data name="msgEnvironmentTemperature" xml:space="preserve">
+    <value>Temperatura otoczenia</value>
+  </data>
+  <data name="msgFilling" xml:space="preserve">
+    <value>Napełnianie</value>
+    <comment>Opis dla etykiety napełnianie.</comment>
+  </data>
+  <data name="msgHeating" xml:space="preserve">
+    <value>Ogrzewanie</value>
+    <comment>Opis dla etykiety ogrzewanie.</comment>
+  </data>
+  <data name="msgHeatingParameters" xml:space="preserve">
+    <value>Parametry toru grzania</value>
+  </data>
+  <data name="msgInitialFill" xml:space="preserve">
+    <value>Wartość początkowa wypełnienia</value>
+  </data>
+  <data name="msgInitialFlow" xml:space="preserve">
+    <value>Wartość przepływu dla składnika</value>
+  </data>
+  <data name="msgLaminar" xml:space="preserve">
+    <value>laminarny</value>
+  </data>
+  <data name="msgLinear" xml:space="preserve">
+    <value>liniowy</value>
+  </data>
+  <data name="msgMixerRatio" xml:space="preserve">
+    <value>Współczynnik skalowania dla mieszadła</value>
+  </data>
+  <data name="msgOutflowingValveType" xml:space="preserve">
+    <value>Rodzaj odpływu</value>
+  </data>
+  <data name="msgOutflowValveValue" xml:space="preserve">
+    <value>Wartość przepływu dla zaworu odpływowego</value>
+  </data>
+  <data name="msgOverfill" xml:space="preserve">
+    <value>PRZEPEŁNIENIE</value>
+    <comment>Opis dla ostrzeżenia o przepełnieniu.</comment>
+  </data>
+  <data name="msgOverheat" xml:space="preserve">
+    <value>PRZEGRZANIE</value>
+    <comment>Opis dla ostrzeżenia o przegrzaniu.</comment>
+  </data>
+  <data name="msgPauseSimulation" xml:space="preserve">
+    <value>Zatrzymaj symulację</value>
+    <comment>Opis przycisku zatrzymania symulacji.</comment>
+  </data>
+  <data name="msgReactionType" xml:space="preserve">
+    <value>Typ reakcji</value>
+  </data>
+  <data name="msgReactorSettings" xml:space="preserve">
+    <value>Ustawienia reaktora</value>
+  </data>
+  <data name="msgSave" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="msgSetPointValues" xml:space="preserve">
+    <value>Wartości zadane</value>
+    <comment>Opis etykiety wartości zadanych.</comment>
+  </data>
+  <data name="msgSimulationSpeed" xml:space="preserve">
+    <value>Prędkość symulacji</value>
+    <comment>Opis etykiety prędkość symulacji.</comment>
+  </data>
+  <data name="msgStabilization" xml:space="preserve">
+    <value>Stabilizacja</value>
+    <comment>Opis dla etykiety stabilizacja.</comment>
+  </data>
+  <data name="msgStartSimulation" xml:space="preserve">
+    <value>Uruchom symulację</value>
+    <comment>Opis przycisku uruchomienia symulacji.</comment>
+  </data>
+  <data name="msgSteamTemperature" xml:space="preserve">
+    <value>Temperatura pary</value>
+  </data>
+  <data name="msgSteamValveType" xml:space="preserve">
+    <value>Rodzaj zaworu pary grzejącej</value>
+  </data>
+  <data name="msgTimeConstant" xml:space="preserve">
+    <value>Stała czasowa</value>
+  </data>
+  <data name="msgTurbulent" xml:space="preserve">
+    <value>turbulentny</value>
+  </data>
+  <data name="msgWarning" xml:space="preserve">
+    <value>OSTRZEŻENIE</value>
+    <comment>Etykieta Ostrzeżenie.</comment>
+  </data>
+  <data name="msgCycle" xml:space="preserve">
+    <value>cykl</value>
+  </data>
+  <data name="msgNoConnection" xml:space="preserve">
+    <value>Brak połączenia z urządzeniem</value>
+  </data>
+  <data name="msgStartTest" xml:space="preserve">
+    <value>Rozpocznij test</value>
+    <comment>Etykieta dla przycisku w trybie test.</comment>
+  </data>
+  <data name="msgStopTest" xml:space="preserve">
+    <value>Zatrzymaj test</value>
+    <comment>Etykieta dla przycisku w trybie test.</comment>
+  </data>
+  <data name="testFilling" xml:space="preserve">
+    <value>Test: "Napełnianie"</value>
+  </data>
+  <data name="testInfoHeader" xml:space="preserve">
+    <value>&lt;h1&gt;Tryb TEST&lt;/h1&gt;</value>
+  </data>
+  <data name="testInfoInfo" xml:space="preserve">
+    <value>&lt;p&gt;W tym trybie testowana jest poprawność działania programu w sterowniku PLC.&lt;/p&gt; &lt;p&gt;Naciśnij przycisk &gt;Rozpocznij symulację&lt; aby sprawdzić poprawnośc programu w sterowniku.&lt;/p&gt; &lt;p&gt;Wyniki testu będą wyświetlane poniżej:&lt;/p&gt;</value>
+  </data>
+  <data name="testInfoMain" xml:space="preserve">
+    <value>&lt;html&gt;&lt;style type=\"text/css\"&gt; h1 { color: Black; text-decoration:underline; text-align:center } h2 { color: Black; text-decoration:underline } h3 { color: Black; text-decoration:underline } p.pitalic { color: Black; font-style:italic } li.liabc { list-style-type:lower-alpha } li.lidot { list-style-type:disc } td.tdTitle { background-color:Gray; border:2 } td.tdContent { text-align: center } td.tdRed { color: Red }&lt;/style&gt;&lt;body&gt;</value>
+  </data>
+  <data name="testAnalogOff" xml:space="preserve">
+    <value>Wyłączone wyjście analogowe</value>
+  </data>
+  <data name="testAnalogOn" xml:space="preserve">
+    <value>Włączone wyjście analogowe</value>
+  </data>
+  <data name="testCooling" xml:space="preserve">
+    <value>Test: "Chłodzenie"</value>
+  </data>
+  <data name="testDigitalOff" xml:space="preserve">
+    <value>Wyłączony styk</value>
+  </data>
+  <data name="testDigitalOn" xml:space="preserve">
+    <value>Włączony styk</value>
+  </data>
+  <data name="testEmptying" xml:space="preserve">
+    <value>Test: "Opróżnianie"</value>
+  </data>
+  <data name="testEnd" xml:space="preserve">
+    <value>Koniec testu</value>
+  </data>
+  <data name="testError" xml:space="preserve">
+    <value>Zakończony błędem</value>
+  </data>
+  <data name="testErrorPLC" xml:space="preserve">
+    <value>Zakończono ten etap testu z powodu błędnego stanu na wyjściach PLC</value>
+  </data>
+  <data name="testErrorTime" xml:space="preserve">
+    <value>Zakończono ten etap testu z powodu przekroczenia dopuszczalnego czasu na wystawienie odpowiedniego stanu przez PLC</value>
+  </data>
+  <data name="testHeating" xml:space="preserve">
+    <value>Test: "Podgrzewanie"</value>
+  </data>
+  <data name="testOverfillError" xml:space="preserve">
+    <value>Nastąpiło przepełnienie reaktora</value>
+  </data>
+  <data name="testOverheatError" xml:space="preserve">
+    <value>Nastąpiło przegrzanie reaktora</value>
+  </data>
+  <data name="testOvershot" xml:space="preserve">
+    <value>Sprawdzanie przeregulowania</value>
+  </data>
+  <data name="testOvershotBorders" xml:space="preserve">
+    <value>Przeregulowanie</value>
+  </data>
+  <data name="testOvershotError" xml:space="preserve">
+    <value>Nie osiągnięto wartości zadanej w pożadanym czasie</value>
+  </data>
+  <data name="testPass" xml:space="preserve">
+    <value>Zakończony powodzeniem</value>
+  </data>
+  <data name="testPLC" xml:space="preserve">
+    <value>PLC</value>
+  </data>
+</root>
