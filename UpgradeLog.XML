@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="PLCEmulator">
+</Property><Property Name="Solution File" Value="C:\Users\Przemek\Documents\Visual Studio 2010\Projects\Płyta CD\Microsoft Visual Studio - Projekt\Microsoft Visual Studio 2008\PLCEmulator\PLCEmulator.sln">
+</Property><Property Name="Date" Value="20 czerwca 2010">
+</Property><Property Name="Time" Value="17:16">
+</Property></Properties><Event ErrorLevel="0" Project="PLCEmulator" Source="PLCEmulator\PLCEmulator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="PLCEmulator" Source="PLCEmulator\PLCEmulator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TestPredkosci" Source="TestPredkosci\TestPredkosci.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TestPredkosci" Source="TestPredkosci\TestPredkosci.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="PLCEmulator.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="PLCEmulator.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PLCEmulator" Source="PLCEmulator\PLCEmulator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="TestPredkosci" Source="TestPredkosci\TestPredkosci.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
