@@ -1,0 +1,183 @@
+﻿<html>
+    <style type="text/css">
+        h1 { color: Black; text-decoration:underline; text-align:center }
+        h2 { color: Black; text-decoration:underline }
+        h3 { color: Black; text-decoration:underline }
+        p.pitalic { color: Black; font-style:italic }
+        li.liabc { list-style-type:lower-alpha }
+        li.numbers { list-style-type:decimal }
+        li.lidot { list-style-type:disc }
+        td.tdTitle { border-style: none;
+            border-color: inherit;
+            border-width: 2;
+            background-color:Gray;
+            text-align: center;
+        }
+        td.tdContent { text-align: center }
+    </style>
+	<body>
+        <h1>Control of the AC Motor Drive</h1>
+        
+        <h2>PROBLEM STATEMENT</h2>
+        <p>Work  of  the  three-phase  alternating  current  (AC)  induction  motor  is  simulated  by  ACMotor user control.
+        Its essential part is a three - phase asynchronous squirrel - cage rotor, widely applied to high - 
+        power drives. The task of this laboratory exercise is to write a PLC program that should perform the 
+        functions presented below.</p>
+ 
+        <h3>Start the motor with the Y-connection</h3>
+        <p>Pressing the SR button (Start Right) or SL button (Start Left) activates the coil K3 (Y-connection).
+        After about 0.2s the coils K1 or K2 are activated according to the chosen direction of rotation (right or left).</p>
+ 
+        <h3>Switching to the ∆ -connection</h3>
+        <p>After about 3s of working with the Y-connection, the motor reaches the proper rotation speed to be 
+        switched over  to  the ∆-connection. The K3  is off, and 0.2s  later  the K4  is switched on. This delay 
+        protects the motor against the short-circuit and welding of conductors.</p>
+ 
+        <h3>Stop the motor</h3>
+        <p>The motor  is  stopped after pressing  the ST (STop) button. The PLC program  switches off all the 
+        coils at the very moment.</p>
+ 
+        <h3>Change of the direction</h3>
+        <p>To change  the direction of  the AC motor’s rotation, any two mains cables have to be changed.
+        On the panel, it is performed  by  switching-over  the  coils K1  and K2.  The  direction  of  the motor’s 
+        rotation may  be  changed  only  by  switching  from Y  to  delta  connection. Hence,  a  change  of  the 
+        direction must be preceded by pressing the ST button.</p>
+ 
+        <h3>Overload</h3>
+        <p>Pressing  the overload button  implies a simulation of an additional braking  torque, what causes  the 
+        overload of the motor:</p>
+        <ul>
+            <li>In  the  case  when  the  motor  is  working  with  the  Y-connection,  pressing  the  overload  button 
+            implies an instantaneous motor disconnection from the mains. </li>
+            <li>In the case when the motor is working with the ∆-connection, short overloads (up to 3s) are 
+            ignored, but long overloads (over 3s) cause that the motor must be stopped (all the coils off).</li>
+            <li>Restart of the motor is available only after pressing the ST button.</li>
+        </ul>
+        
+        <h3>Preservations and interlocks</h3>
+        <p>Considering the security requirements, the PLC program should contain the following preservations 
+        and interlocks:</p>
+        <ul>
+            <li>Outputs  of  the  PLC  that  control  the K1 -  K4  relays  block  each  other,  i.e. Q1  blocks Q2, Q3 
+            blocks Q4 and vice versa.</li>
+            <li>Signals I5 - I8 that confirm the state of the coils are used for supervising the work of the drive.</li>
+        </ul>
+        
+        <h3>Left and right limit switch</h3>
+        <p>The  program 
+        should meet the following requirements:</p>
+        <ul>
+            <li>Appearing the Right limit switch signal while  the motor  is  rotating  right means  that  the  drive should 
+            be stopped.</li>
+            <li>Now it is possible to start the drive to the opposite (left) direction by 
+                pressing the SL button.</li>
+            <li>The motor rotates left until the left limit position is achieved. This stops 
+            the motor.</li>
+            <li>Now it is possible to start the drive to the opposite (right) direction by 
+                pressing the SR button.</li>
+        </ul>
+        
+        <h2>LIST OF VARIABLES</h2>
+        <p>The  inputs  of  the  PLC  are  the  outputs  of  the  panel. They  inform  the  PLC  about  the  state  of  an 
+        electric motor (contacts) and operator’s orders (push - buttons). A list of inputs used in this exercise 
+        is presented in a table below. </p>
+        <p>PLC inputs:</p>
+        <table border="2" width="100%">
+        <tr>
+            <td class="tdTitle">Input No.</td>
+            <td class="tdTitle">Symbol</td>
+            <td class="tdTitle">Information</td>
+            <td class="tdTitle">Contact type</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I1</td>
+            <td class="tdContent">SR</td>
+            <td class="tdContent">Start Right</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I2</td>
+            <td class="tdContent">SL</td>
+            <td class="tdContent">Start Left</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I3</td>
+            <td class="tdContent">ST</td>
+            <td class="tdContent">STop</td>
+            <td class="tdContent">contact normally closed +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I4</td>
+            <td class="tdContent">UB</td>
+            <td class="tdContent">overload</td>
+            <td class="tdContent">contact normally closed +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I5</td>
+            <td class="tdContent">SK1</td>
+            <td class="tdContent">State of K1</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I6</td>
+            <td class="tdContent">SK2</td>
+            <td class="tdContent">State of K2</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I7</td>
+            <td class="tdContent">SK3</td>
+            <td class="tdContent">State of K3</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I8</td>
+            <td class="tdContent">SK4</td>
+            <td class="tdContent">State of K4</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I9</td>
+            <td class="tdContent">L</td>
+            <td class="tdContent">Left limit switch</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I10</td>
+            <td class="tdContent">R</td>
+            <td class="tdContent">Right limit switch</td>
+            <td class="tdContent">contact normally open +24V</td>
+        </tr>
+        </table>
+        <p>Outputs of the PLC (i.e. inputs of the panel) control the motor. They are listed below.</p>
+        <p>PLC outputs:</p>
+        <table border="2" width="100%">
+        <tr>
+            <td class="tdTitle">Output No.</td>
+            <td class="tdTitle">Symbol</td>
+            <td class="tdTitle">Information</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q1</td>
+            <td class="tdContent">K1</td>
+            <td class="tdContent">control of the coil K1 <br/> (right)  0V = off / +24V = on</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q2</td>
+            <td class="tdContent">K2</td>
+            <td class="tdContent">control of the coil K2 (left) <br/>  0V = off / +24V = on </td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q3</td>
+            <td class="tdContent">K3</td>
+            <td class="tdContent">control of the coil K3 (Y) <br/> 0V = off / +24V = on </td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q4</td>
+            <td class="tdContent">K4</td>
+            <td class="tdContent">control of the coil K4 (∆) <br/> 0V = off / +24V = on </td>
+        </tr>
+        </table>
+	</body>
+</html>

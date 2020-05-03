@@ -112,203 +112,159 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="msgClose" xml:space="preserve">
-    <value>Close</value>
+  <data name="msgACMotor" xml:space="preserve">
+    <value>ACMotor</value>
+    <comment>Etykieta dla silnika</comment>
   </data>
-  <data name="msgConstant" xml:space="preserve">
-    <value>stałoprocentowy</value>
+  <data name="menuConnect" xml:space="preserve">
+    <value>Connect</value>
+    <comment>Połączenie</comment>
   </data>
-  <data name="msgCoolDownParameters" xml:space="preserve">
-    <value>Cool down parameters</value>
+  <data name="msgDemo" xml:space="preserve">
+    <value>Demo</value>
+    <comment>Nazwa dla trybu Demo</comment>
   </data>
-  <data name="msgCooling" xml:space="preserve">
-    <value>Cooling</value>
-    <comment>Opis dla etykiety chłodzenie.</comment>
+  <data name="menuDisconnect" xml:space="preserve">
+    <value>Disconnect</value>
+    <comment>Brak połączenia</comment>
   </data>
-  <data name="msgCoolingParameters" xml:space="preserve">
-    <value>Cooling parameters</value>
+  <data name="msgReactor" xml:space="preserve">
+    <value>Reactor</value>
+    <comment>Nazwa dla Reaktora</comment>
   </data>
-  <data name="msgCoolingWaterTemperature" xml:space="preserve">
-    <value>Cooling water temperature</value>
+  <data name="msgSimulation" xml:space="preserve">
+    <value>Simulation</value>
+    <comment>Nazwa dla trybu Symulacji</comment>
   </data>
-  <data name="msgDelay" xml:space="preserve">
-    <value>Delay</value>
+  <data name="msgTest" xml:space="preserve">
+    <value>Test</value>
+    <comment>Nazwa dla trybu Testowego</comment>
   </data>
-  <data name="msgEmptying" xml:space="preserve">
-    <value>Draining</value>
-    <comment>Opis dla etykiety opróżnianie.</comment>
+  <data name="msgTestPannel" xml:space="preserve">
+    <value>Test panel</value>
+    <comment>Panel testowy</comment>
   </data>
-  <data name="msgEnvironmentTemperature" xml:space="preserve">
-    <value>Environment temperature</value>
+  <data name="msgSettings" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Nazwa dla ustawień.</comment>
   </data>
-  <data name="msgFilling" xml:space="preserve">
-    <value>Feeding</value>
-    <comment>Opis dla etykiety napełnianie.</comment>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ACMotorHLP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help\ACMotorEN.htm;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="msgHeating" xml:space="preserve">
-    <value>Heating</value>
-    <comment>Opis dla etykiety ogrzewanie.</comment>
+  <data name="ReactorHLP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help\ReactorEN.htm;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="msgHeatingParameters" xml:space="preserve">
-    <value>Heating parameters</value>
+  <data name="SygnalizacjaHLP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help\SygnalizacjaEN.htm;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="msgInitialFill" xml:space="preserve">
-    <value>Initial fill</value>
+  <data name="SygnalizacjaIIHLP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help\SygnalizacjaIIEN.htm;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="msgInitialFlow" xml:space="preserve">
-    <value>Initial flow </value>
-  </data>
-  <data name="msgLaminar" xml:space="preserve">
-    <value>laminarny</value>
-  </data>
-  <data name="msgLinear" xml:space="preserve">
-    <value>linear</value>
-  </data>
-  <data name="msgMixerRatio" xml:space="preserve">
-    <value>Mixer ratio</value>
-  </data>
-  <data name="msgCycle" xml:space="preserve">
-    <value>cycle</value>
+  <data name="SygnalizacjaIIIHLP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help\SygnalizacjaIIIEN.htm;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="msgNoConnection" xml:space="preserve">
-    <value>No hardware connection</value>
+    <value>No hardware connection.</value>
+    <comment>Informacja o braku połączenia</comment>
   </data>
-  <data name="msgOutflowingValveType" xml:space="preserve">
-    <value>Outlet valve type</value>
+  <data name="menuCaptions" xml:space="preserve">
+    <value>Captions</value>
+    <comment>Przycisk menu Oznaczenia</comment>
   </data>
-  <data name="msgOutflowValveValue" xml:space="preserve">
-    <value>Flow value</value>
+  <data name="menuOptions" xml:space="preserve">
+    <value>Options</value>
+    <comment>Przycisk menu Opcje</comment>
   </data>
-  <data name="msgOverfill" xml:space="preserve">
-    <value>OVERFILL</value>
-    <comment>Opis dla ostrzeżenia o przepełnieniu.</comment>
+  <data name="settingsWndAnalog" xml:space="preserve">
+    <value>Analog</value>
   </data>
-  <data name="msgOverheat" xml:space="preserve">
-    <value>OVERHEAT</value>
-    <comment>Opis dla ostrzeżenia o przegrzaniu.</comment>
+  <data name="settingsWndBit" xml:space="preserve">
+    <value>bit</value>
   </data>
-  <data name="msgPauseSimulation" xml:space="preserve">
-    <value>Pause simulation</value>
-    <comment>Opis przycisku zatrzymania symulacji.</comment>
+  <data name="settingsWndBits" xml:space="preserve">
+    <value>Bit</value>
   </data>
-  <data name="msgReactionType" xml:space="preserve">
-    <value>Reaction type</value>
+  <data name="settingsWndByte" xml:space="preserve">
+    <value>byte</value>
   </data>
-  <data name="msgReactorSettings" xml:space="preserve">
-    <value>Reactor settings</value>
+  <data name="settingsWndDiscrete" xml:space="preserve">
+    <value>Digital</value>
+  </data>
+  <data name="settingsWndInputs" xml:space="preserve">
+    <value>Inputs</value>
+  </data>
+  <data name="settingsWndNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="settingsWndOutputs" xml:space="preserve">
+    <value>Outputs</value>
+  </data>
+  <data name="settingsWndSetType" xml:space="preserve">
+    <value>Choose type</value>
+  </data>
+  <data name="settingsWndStartValue" xml:space="preserve">
+    <value>Start value</value>
+  </data>
+  <data name="settingsWndSymbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="settingsWndTitle" xml:space="preserve">
+    <value>Labels settings</value>
+  </data>
+  <data name="settingsWndView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="settingsWngNumeration" xml:space="preserve">
+    <value>Numerations</value>
+  </data>
+  <data name="msgClose" xml:space="preserve">
+    <value>Close</value>
+    <comment>Etyketa dla przycisku zamknij.</comment>
   </data>
   <data name="msgSave" xml:space="preserve">
     <value>Save</value>
+    <comment>Etyketa dla przycisku zapisz.</comment>
   </data>
-  <data name="msgSetPointValues" xml:space="preserve">
-    <value>Set point values</value>
-    <comment>Opis etykiety wartości zadanych.</comment>
+  <data name="msgCancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Etykieta Anuluj</comment>
   </data>
-  <data name="msgSimulationSpeed" xml:space="preserve">
-    <value>Simulation speed</value>
-    <comment>Opis etykiety prędkość symulacji.</comment>
+  <data name="msgOK" xml:space="preserve">
+    <value>OK</value>
+    <comment>Etykieta OK</comment>
   </data>
-  <data name="msgStabilization" xml:space="preserve">
-    <value>Stabilization</value>
-    <comment>Opis dla etykiety stabilizacja.</comment>
+  <data name="settingsWndSaveSettings" xml:space="preserve">
+    <value>Save settings</value>
   </data>
-  <data name="msgStartSimulation" xml:space="preserve">
-    <value>Start simulation</value>
-    <comment>Opis przycisku uruchomienia symulacji.</comment>
+  <data name="settingsWndSaveSettingsAs" xml:space="preserve">
+    <value>Save settings as</value>
   </data>
-  <data name="msgStartTest" xml:space="preserve">
-    <value>Start test</value>
-    <comment>Etykieta dla przycisku w trybie test.</comment>
+  <data name="settingsWndSettings" xml:space="preserve">
+    <value>User settings</value>
   </data>
-  <data name="msgSteamTemperature" xml:space="preserve">
-    <value>Steam temperature</value>
+  <data name="settingsWndSettingsInfo" xml:space="preserve">
+    <value>No space</value>
   </data>
-  <data name="msgSteamValveType" xml:space="preserve">
-    <value>Steam valve type</value>
+  <data name="settingsWndSettingsName" xml:space="preserve">
+    <value>Settings name</value>
   </data>
-  <data name="msgStopTest" xml:space="preserve">
-    <value>Stop test</value>
-    <comment>Etykieta dla przycisku w trybie test.</comment>
+  <data name="msgSygnalizacja" xml:space="preserve">
+    <value>Traffic lights</value>
+    <comment>Etykieta dla sygnalizacji</comment>
   </data>
-  <data name="msgTimeConstant" xml:space="preserve">
-    <value>Time-constant</value>
+  <data name="msgObjasnienia" xml:space="preserve">
+    <value>Explanation</value>
   </data>
-  <data name="msgTurbulent" xml:space="preserve">
-    <value>turbulent</value>
+  <data name="msgSygnalizacjaII" xml:space="preserve">
+    <value>Traffic lights II</value>
   </data>
-  <data name="msgWarning" xml:space="preserve">
-    <value>WARNING</value>
-    <comment>Etykieta Ostrzeżenie.</comment>
-  </data>
-  <data name="testAnalogOff" xml:space="preserve">
-    <value>To low analog output value</value>
-  </data>
-  <data name="testAnalogOn" xml:space="preserve">
-    <value>To high analog outpu value</value>
-  </data>
-  <data name="testCooling" xml:space="preserve">
-    <value>Test: "Cooling"</value>
-  </data>
-  <data name="testDigitalOff" xml:space="preserve">
-    <value>Digital output disabled</value>
-  </data>
-  <data name="testDigitalOn" xml:space="preserve">
-    <value>Digital output enabled</value>
-  </data>
-  <data name="testEmptying" xml:space="preserve">
-    <value>Test: "Emptying"</value>
-  </data>
-  <data name="testEnd" xml:space="preserve">
-    <value>End of test</value>
-  </data>
-  <data name="testError" xml:space="preserve">
-    <value>Ended with error</value>
-  </data>
-  <data name="testErrorPLC" xml:space="preserve">
-    <value>End of test phase - Incorrect PLC outputs</value>
-  </data>
-  <data name="testErrorTime" xml:space="preserve">
-    <value>End of test phase - Timeout for PLC reaction</value>
-  </data>
-  <data name="testFilling" xml:space="preserve">
-    <value>Test: "Filling"</value>
-  </data>
-  <data name="testHeating" xml:space="preserve">
-    <value>Test: "Heating"</value>
-  </data>
-  <data name="testInfoHeader" xml:space="preserve">
-    <value>&lt;h1&gt;TEST mode&lt;/h1&gt;</value>
-  </data>
-  <data name="testInfoInfo" xml:space="preserve">
-    <value>&lt;p&gt;This mode tests the correctness of the program in the PLC.&lt;/p&gt; &lt;p&gt;Press the &gt;Start test&lt; button to start the test.&lt;/p&gt; &lt;p&gt;Test results will be displayed below:&lt;/p&gt;</value>
-  </data>
-  <data name="testInfoMain" xml:space="preserve">
-    <value>&lt;html&gt;&lt;style type=\"text/css\"&gt; h1 { color: Black; text-decoration:underline; text-align:center } h2 { color: Black; text-decoration:underline } h3 { color: Black; text-decoration:underline } p.pitalic { color: Black; font-style:italic } li.liabc { list-style-type:lower-alpha } li.lidot { list-style-type:disc } td.tdTitle { background-color:Gray; border:2 } td.tdContent { text-align: center } td.tdRed { color: Red }&lt;/style&gt;&lt;body&gt;</value>
-  </data>
-  <data name="testOverfillError" xml:space="preserve">
-    <value>Reactor overfill</value>
-  </data>
-  <data name="testOverheatError" xml:space="preserve">
-    <value>Reactor overheat</value>
-  </data>
-  <data name="testOvershot" xml:space="preserve">
-    <value>Overshot test</value>
-  </data>
-  <data name="testOvershotBorders" xml:space="preserve">
-    <value>Overshot</value>
-  </data>
-  <data name="testOvershotError" xml:space="preserve">
-    <value>Set point value not reached</value>
-  </data>
-  <data name="testPass" xml:space="preserve">
-    <value>Finished successfully</value>
-  </data>
-  <data name="testPLC" xml:space="preserve">
-    <value>PLC</value>
+  <data name="msgSygnalizacjaIII" xml:space="preserve">
+    <value>Traffic lights III</value>
   </data>
 </root>

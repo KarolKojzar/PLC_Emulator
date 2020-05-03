@@ -1,0 +1,245 @@
+﻿<html>
+    <style type="text/css">
+        h1 { color: Black; text-decoration:underline; text-align:center }
+        h2 { color: Black; text-decoration:underline }
+        h3 { color: Black; text-decoration:underline }
+        p.pitalic { color: Black; font-style:italic }
+        li.liabc { list-style-type:lower-alpha }
+        li.lidot { list-style-type:disc }
+        li.li123 { list-style-type:decimal }
+        td.tdTitle { border-style: none;
+            border-color: inherit;
+            border-width: 2;
+            background-color:Gray;
+            text-align: center;
+        }
+        td.tdContent { text-align: center }
+    </style>
+	<body>
+        <h1>Sterowanie pracą reaktora chemicznego</h1>
+        <p class="pitalic">Celem ćwiczenia jest opracowanie na sterowniku programowalnym programu realizującego
+        jednopętlowy układ regulacji a następnie dobór nastaw regulatora zapewniających odpowiedni przebieg 
+        wielkości regulowanej.</p>
+        <h2>Wprowadzenie</h2>
+        <p>Kontrolka ta symuluje statyczne i dynamiczne własności procesu zachodzącego w reaktorze
+        chemicznym. Odpowiedzi na zmianę sygnałów wejściowych symulują zachowanie się obiektu rzeczywistego.
+        Aktualny stan procesu obrazowany jest poprzez przedstawioną grafikę.</p>
+        <h2>Opis procesu</h2>
+        <p>Kontrolka symuluje przebieg procesu zachodzącego w reaktorze chemicznym stwarzając
+        możliwość regulacji temperatury i poziomu w reaktorze.</p>
+        <ol>
+            <h3>Reaktor</h3>
+            
+            <p>Reaktor chemiczny otoczony jest płaszczem umożliwiającym ogrzewanie lub chłodzenie czynników
+            znajdujących się w reaktorze poprzez włączenie odpowiednio układu doprowadzającego do płaszcza
+            czynnik grzewczy lub chłodzący. Wewnątrz reaktora znajdują się następujące elementy:</p>
+            
+            <ul>
+                <li class="liabc">Sensor dokonujący pomiaru aktualnego stanu poziomu czynników znajdujących się
+                w reaktorze. Jest to sygnał wyjściowy panelu oznaczony symbolem "AI1". Aktualny poziom w
+                reaktorze jest wizualizowany przy pomocy odpowiednich pól tekstowych usytuowanych
+                wewnątrz grafiki zbiornika oraz animowanego poziomu wypełnienia zbiornika.</li>
+                <li class="liabc">Sensor dokonujący pomiaru aktualnej wartości temperatury czynników 
+                    znajdujących się w reaktorze. Jest to sygnał wyjściowy panelu oznaczony symbolem 
+                    &quot;AI2&quot;. Aktualna wartość temperatury jest wizualizowana przy pomocy pól 
+                    tekstowych umieszczonych wewnątrz grafiki reaktora.</li>
+                <li class="liabc">Mieszadło wprawiane w ruch przez silnik &quot;M&quot;.</li>
+            </ul>
+            
+            <h3>Doprowadzenie czynników do reaktora</h3>
+            
+            <p>Doprowadzenie czynników do reaktora odbywa się przy pomocy dwóch zaworów dwupołożeniowych:</p>
+            <ul>
+                <li class="lidot">zawór "V1" (sygnał sterujący Q1) - doprowadzenie czynnika A - "PA"</li>
+                <li class="lidot">zawór "V2" (sygnał sterujący Q2) - doprowadzenie czynnika B - "PB"</li>
+            </ul>
+            <p>Temperatura czynników jest stała i wynosi 20oC.</p>
+            
+            <h3>Ogrzewanie</h3>
+            <p>Analogowy zawór "AV2" (sygnał sterując "AQ2") umożliwia płynną (ciągła) regulację
+            ilości medium grzewczego H przepływającego przez płaszcz reaktora. Zakłada się, że zawór
+            "AV2" jest elementem bezinercyjnym, "czysto" proporcjonalnym, bez opóźnienia. Aktualny
+            stan otwarcia zaworu "AV2" jest obrazowany przy pomocy etykiety tekstowej 
+                umieszczonej pod zaworem, wyświetlającej aktualną wartość napięcia wystawianą na 
+                wyjście analogowe.<br/>
+            <i><b>Uwaga:</b> Przepływ medium grzewczego H odbywa się tylko i wyłącznie, gdy otwarty jest zawór
+            analogowy "AV2" (dopływ) i zawór binarny "V5" (odpływ).</i>
+            <br/>Przepływ medium grzewczego H obrazowany jest poprzez pojawienię się czerwonej 
+                cieczy w rurociągu i płaszczu otaczającym zbiornik.</p>
+            
+            <h3>Chłodzenie</h3>
+            <p>Zawór binarny "V3" (sygnał sterujący "Q3") otwiera dopływ medium chłodzącego C
+            do płaszcza reaktora. Otwarcie zaworu sygnalizuje zielona lampka przy jego symbolu.
+            <br/><i><b>Uwaga:</b> Przepływ medium chłodzącego odbywa się tylko i wyłącznie, gdy otwarte są
+            równocześnie: binarny zawór "V3" (dopływ) i zawór "V4" (odpływ).</i>
+            <br/>Przepływ medium chłodzącego C obrazowany jest poprzez pojawienię się 
+                niebieskiej cieczy w rurociągu i płaszczu otaczającym zbiornik.</p>
+            
+            <h3>Odprowadzenie produktu z reaktora</h3>
+            <p>Odprowadzenie produktu końcowego C (oznaczenie PC) odbywa się poprzez otwarcie 
+                zaworu &quot;AV1&quot; (sygnał sterujący &quot;AQ1&quot;). Jest to zawór analogowy umożliwiający 
+                płynną (ciągłą) zmianę przepływu odprowadzanego produktu końcowego. Sterowanie 
+                zaworem &quot;AV1&quot; odbywa się poprzez analogowe wyjście &quot;AQ1&quot;. Aktualny stan otwarcia 
+                zaworu &quot;AV1&quot; jest obrazowany przy pomocy etykiety tekstowej umieszczonej pod 
+                zaworem, wyświetlającej aktualną wartość napięcia wystawianą na wyjście 
+                analogowe. Odpływ produktu końcowego jest sygnalizowany przez pojawienie się 
+                niebieskiej cieczy w rurociągu odpływowym ze zbiornika.</p>
+            
+            <h3>Wyjścia i oznaczenia</h3>
+            <p>Po prawej stronie kontrolki znajdują się dwa suwaki umozliwiające nastawy 
+                wartości zadanych:</p>
+            </table>
+        <p>Wejścia analogowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">aktualny poziom w reaktorze</td>
+            <td class="tdContent">AI1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">aktualna temperatura w reaktorze</td>
+            <td class="tdContent">AI2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">wartość zadana poziomu</td>
+            <td class="tdContent">AI3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">wartość zadana temperatury</td>
+            <td class="tdContent">AI4</td>
+        </tr>
+        </table>
+        <p>Wyjścia analogowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">stopień otwarcia zaworu odpływowego</td>
+            <td class="tdContent">AQ1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">stopień otwarcia zaworu na dopływie pary grzejącej</td>
+            <td class="tdContent">AQ2</td>
+        </tr>
+        </table>
+        
+        <p>Wejścia cyfrowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">napełnianie</td>
+            <td class="tdContent">I1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">ogrzewanie</td>
+            <td class="tdContent">I2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">chłodzenie</td>
+            <td class="tdContent">I3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">opróżnianie</td>
+            <td class="tdContent">I4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">tryb pracy jednego cyklu</td>
+            <td class="tdContent">I5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">tryb pracy automatycznej</td>
+            <td class="tdContent">I6</td>
+        </tr>
+        <tr>
+            <td class="tdContent">tryb napełniania</td>
+            <td class="tdContent">I7</td>
+        </tr>
+        </table>
+        
+        <p>Wyjścia cyfrowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">zawór V1</td>
+            <td class="tdContent">Q1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">zawór V2</td>
+            <td class="tdContent">Q2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">zawór V3</td>
+            <td class="tdContent">Q3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">zawór V4</td>
+            <td class="tdContent">Q4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">zawór V5</td>
+            <td class="tdContent">Q5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">mieszadło</td>
+            <td class="tdContent">Q6</td>
+        </tr>
+        </table>
+        </ol>
+        
+        <h2>Program ćwiczenia</h2>
+        <p>
+        Celem ćwiczenia jest opracowanie programu sterującego pracą reaktora chemicznego, który
+        spełnia następujące wymagania:</p>
+        <ul>
+            <li class="li123">Program sterujący realizuje kolejne fazy procesu według następującej kolejności:</li>
+            <ul>
+                <li class="lidot">Napełnianie reaktora</li>
+                <li class="lidot">Ogrzewanie i stabilizacja temperatury produktu w reaktorze</li>
+                <li class="lidot">Chłodzenie produktu</li>
+                <li class="lidot">Opróżnianie reaktora</li>
+            </ul>
+            <li class="li123">Istnieje możliwość wybrania jednego z trzech trybów pracy :</li>
+            <ul>
+                <li class="lidot">Tryb ręczny: w celu rozpoczęcia kolejnej fazy należy uaktywnić odpowiednie wejście I1-I4,</li>
+                <li class="lidot">Tryb półautomatyczny: w przypadku gdy uaktywnione jest wejście I5 wszystkie cztery fazy zostają wykonane jeden raz,</li>
+                <li class="lidot">Tryb automatyczny: w przypadku gdy uaktywnione jest wejście I6 wszystkie fazy procesu wykonywane są cyklicznie w cyklu zamkniętym (po zakończeniu opróżniania program automatycznie przechodzi do fazy napełniania).</li>
+            </ul>
+            <li class="li123">Reaktor jest napełniany czynnikami A i B
+                <li class="lidot">w stosunku objętościowym 1 - 1, gdy wejście I7 nie jest uaktywnione,</li>
+                <li class="lidot">w stosunku objętościowym 2 - 1, gdy wejście I7 jest uaktywnione.</li>
+            </li>
+        </ul>
+        
+        <h3>Napełnianie reaktora</h3>
+        <p>W tej fazie odbywa się napełnianie reaktora dwoma czynnikami (A i B). W celu
+        napełnienia zbiornika czynnikiem A lub B należy otworzyć odpowiednio zawór binarny V1
+        lub V2. Zbiornik należy napełnić dwoma czynnikami w zadanym stosunku objętościowym.</p>
+        
+        <h3>Ogrzewanie i stabilizacja temperatury w reaktorze</h3>
+        <p>W celu ogrzewania i stabilizacji temperatury w reaktorze należy zastosować regulator
+        PID. Regulacja temperatury odbywa się przy pomocy zaworu analogowego AV2, który
+        umożliwia płynną zmianę przepływu medium ogrzewającego.
+        Początkowo temperatura produktu zmienia się zgodnie z zadaną krzywą, aż do
+        osiągnięcia temperatury zadanej (Tzad). Następnie temperatura jest stabilizowana przez pewien
+        czas tr. W tym okresie pracuje również mieszadło.</p>
+        
+        <h3>Chłodzenie produktu</h3>
+        <p>Po otworzeniu zaworu V3 i V4 następuje przepływ medium chłodzącego. Faza
+        chłodzenia kończy się z chwilą osiągnięcia przez produkt temperatury otoczenia 
+            (20[oC]).</p>
+        
+        <h3>Opróżnianie reaktora</h3>
+        <p>Opróżnianie reaktora odbywa się poprzez otwarcie zaworu analogowego AV1.</p>
+	</body>
+</html>

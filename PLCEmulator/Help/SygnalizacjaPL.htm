@@ -1,0 +1,186 @@
+﻿<html>
+    <style type="text/css">
+        h1 { color: Black; text-decoration:underline; text-align:center }
+        h2 { color: Black; text-decoration:underline }
+        h3 { color: Black; text-decoration:underline }
+        p.pitalic { color: Black; font-style:italic }
+        li.liabc { list-style-type:lower-alpha }
+        li.lidot { list-style-type:disc }
+        li.li123 { list-style-type:decimal }
+        td.tdTitle { border-style: none;
+            border-color: inherit;
+            border-width: 2;
+            background-color:Gray;
+            text-align: center;
+        }
+        td.tdContent { text-align: center }
+    </style>
+	<body>
+        <h1>Sterowanie działaniem sygnalizacji świetlnej</h1>
+        <p class="pitalic">Celem ćwiczenia jest opracowanie na sterowniku PLC programu realizującego
+        działanie sterowania sygnalizacją świetlną.</p>
+
+        <h2>Opis procesu</h2>
+        <p>Symulacja prezentuje skrzyżowanie z sygnalizacją świetlną wyposażoną w czujniki detekcji pojazdów. Założeniem jest stworzenie programu sterującego
+        sygnalizacją akomodacyjną.</p>
+        <ol>
+            <h3>Sygnalizacja akomodacyjna</h3>
+            
+            <p>Jest to sygnalizacja, która za pomocą czujników umieszczonych w jezdni rozpoznaje skąd dojeżdza do skrzyżowania pojazd i na tej podstawie
+            dostosowuje sygnały zezwalające na przejazd za sygnalizator. Skrzyżowanie składa się z czterech sygnalizacji ogólnych, dwóch kierunkowych oraz 
+            dwóch warunkowych. W objaśnieniu dostępnym z lewej strony należy zapoznać się z numeracją poszególnych sygnalizatorów oraz pojazdów.</p>
+            
+            <ul>
+                <li class="liabc">Sygnalizator ogólny - pozwala pojazdom opuszczenie skrzyżowania w dowolnym kierunku.</li>
+                <li class="liabc">Sygnalizator kierunkowy - zezwala na ruch w kierunku wyświetlnaym na sygnalizatorze.</li>
+                <li class="liabc">Sygnalizator warunkowy - tzw. zielona strzałka, zezwala na skręt w prawo.</li>
+            </ul>
+            
+            <h3>Założenia:</h3>
+            
+            <p>Symulacja opiera się na wejściach/wyjściach cyfrowych. Numeracja wyjść umieszczona została obok konretnego sygnalizatora, natomiast wejść obok
+            przycisków za pomocą których w trybie symulacyjnym można generować wzbudzenia w postaci pojawienia się danego pojazdu. Stan wysoki na wyjściu cyfrowym
+            odpowiada pojawieniu się sygnału zielonego na sygnalizatorze, analogicznie stan niski odpowiada za barwę czerwoną. Zapalanie się żółtego światła
+            odbywa się automatycznie, dlatego wymaga się uwzględnienie czasu potrzebnego na zmiany sygnałów:</p>
+            <ul>
+                <li class="lidot">Z czerwonego na zielone - 1 sekunda !</li>
+                <li class="lidot">Z zielonego na czerowny - 3 sekundy !</li>
+            </ul>
+            <p>Pojazd, który dostał pozwolenie na przejazd przez sygnalizację, potrzebuje około 4 sekund na bezpieczny przejazd. Zakłada się zatem, aby
+            sygnał zielony był wystawiany minimum przez 3 sekundy !</p>
+            
+            <h3>Bezkolizyjność:</h3>
+            <p>Najważniejszym aspektem jest zapewnienie pojazdom bezpiecznego przejazdu, jednocześnie zapewniając jak największą ilość sygnałów zezwalających na przejazd.
+             Tabela poniżej zawiera zestawienie sygnalizatorów, z którymi dany sygnał koliduje.</p>
+            
+             <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Sygnalizator</td>
+            <td class="tdTitle">Sygnalizatory kolidujące:</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 1</td>
+            <td class="tdContent">- sygnalizacja ogólna nr 3<br />- sygnalizacja ogólna nr 5<br />- sygnalizacja ogólna nr 6</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 2</td>
+            <td class="tdContent">- sygnalizacja ogólna nr 3<br />- sygnalizacja kierunkowa nr 4<br />- sygnalizacja ogólna nr 6<br />- sygnalizacja warunkowa nr 7</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 3</td>
+            <td class="tdContent">- sygnalizacja kierunkowa nr 1<br />- sygnalizacja ogólna nr 2<br />- sygnalizacja kierunkowa nr 4<br />- sygnalizacja ogólna nr 5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 4</td>
+            <td class="tdContent">- sygnalizacja ogólna nr 2<br />- sygnalizacja ogólna nr 3<br />- sygnalizacja ogólna nr 6</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 5</td>
+            <td class="tdContent">- sygnalizacja kierunkowa nr 1<br />- sygnalizacja ogólna nr 3<br />- sygnalizacja ogólna nr 6<br />- sygnalizacja warunkowa nr 8</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 6</td>
+            <td class="tdContent">- sygnalizacja kierunkowa nr 1<br />- sygnalizacja ogólna nr 2<br />- sygnalizacja kierunkowa nr 4<br />- sygnalizacja ogólna nr 5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 7</td>
+            <td class="tdContent">- sygnalizacja ogólna nr 2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Nr 8</td>
+            <td class="tdContent">- sygnalizacja ogólna nr 5</td>
+        </tr>
+        </table>
+
+            <h3>Wystąpienie awarii</h3>
+            <p>Jak to bywa w rzeczywistości, nic nie jest doskonałe. Usterka lub awaria może dotkąć układu sterowania sygnalizacją. Zaleca się, aby w danej sytuacji
+            przełączyć układ w awaryjny tryb działania. Na sygnalizatorach powinno migać żółte światło, a pojazdy chaotycznie przejeżdzając, pokazują sens istetnia
+            sygnalizatorów. =)</p>
+
+            <h3>Tryb demo</h3>
+            <p>Pokazuje, w jaki sposób możliwe jest wysterowywanie sygnałów.</p>
+
+            <h3>Tryb symulacji</h3>
+            <p>W danym trybie możliwy jest podgląd na bieżąco jak działa program. Odblokowywane są wejścia za pomocą których programista może zadawać wzbudzenia.</p>
+
+            <h3>Tryb testowy</h3>
+            <p>Ostatecznie stworzony program sterujący daną sygnalizacją należy poddać przetestowaniu. Aplikacja będzie losowo wzbudzać sygnalizację, o odpowiedniej 
+            częstoliwości. Wyniki oraz komentarze na temat poprawności testu będą na bieżąco wyświetlane w oknie tekstowym.</p>
+            
+            
+        <h3>Oznaczenia wejść/wyjść</h3>        
+        <p>Wejścia cyfrowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 1</td>
+            <td class="tdContent">I1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 2</td>
+            <td class="tdContent">I2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 3</td>
+            <td class="tdContent">I3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 4</td>
+            <td class="tdContent">I4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 5</td>
+            <td class="tdContent">I5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Pojazd 6</td>
+            <td class="tdContent">I6</td>
+        </tr>
+                <tr>
+            <td class="tdContent">Awaria</td>
+            <td class="tdContent">I7</td>
+        </tr>
+        </table>
+        
+        <p>Wyjścia cyfrowe:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Opis</td>
+            <td class="tdTitle">Oznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 1</td>
+            <td class="tdContent">Q1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 2</td>
+            <td class="tdContent">Q2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 3</td>
+            <td class="tdContent">Q3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 4</td>
+            <td class="tdContent">Q4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 5</td>
+            <td class="tdContent">Q5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Sygnalizacja 6</td>
+            <td class="tdContent">Q6</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Awaryjne zasilanie</td>
+            <td class="tdContent">Q7</td>
+        </tr>
+        </table>
+        </ol>
+        
+	</body>
+</html>

@@ -1,0 +1,229 @@
+﻿<html>
+    <style type="text/css">
+        h1 { color: Black; text-decoration:underline; text-align:center }
+        h2 { color: Black; text-decoration:underline }
+        h3 { color: Black; text-decoration:underline }
+        p.pitalic { color: Black; font-style:italic }
+        li.liabc { list-style-type:lower-alpha }
+        li.lidot { list-style-type:disc }
+        td.tdTitle { border-style: none;
+            border-color: inherit;
+            border-width: 2;
+            background-color:Gray;
+            text-align: center;
+        }
+        td.tdContent { text-align: center }
+    </style>
+	<body>
+	    <h1>STEROWANIE PRACĄ SILNIKA TRÓJFAZOWEGO</h1>
+	
+	    <p class="pitalic">Celem ćwiczenia jest wykonanie i uruchomienie programu sterującego rozruchem i pracą
+        silnika trójfazowego.</p>
+    
+        <h2>Wprowadzenie</h2>
+        <p>Kontrolka jest sprzężona z silnikiem trójfazowym poprzez sterownik programowalny i
+        stanowi panel operatorski. Na panelu znajdują się cztery przyciski, które należy oprogramować tak,
+        aby umożliwiały sterowanie silnikiem.</p>
+    
+        <h3>Opis zagadnienia</h3>
+        <p>Ćwiczenie jest poświęcone cyfrowemu sterowaniu silnika trójfazowego. Aby silnik mógł ruszyć
+        konieczne jest, by jego moment rozruchowy był większy od momentu hamującego. W tym przypadku
+        silnik zwiększa swoje obroty, aż do chwili wystąpienia równowagi między momentem obrotowym i
+        hamującym. Przy rozruchu silników trójfazowych prąd rozruch jest znacznie większy od prądu
+        znamionowego, natomiast moment rozruchowy jest stosunkowo mały. W celu wyeliminowania tych
+        niekorzystnych zjawisk stosuje się specjalne procedury rozruchu tego typu silników. Najczęściej
+        stosowana jest tzw. <b><i>metoda przełączenia gwiazda - trójkąt</i></b>. W początkowej fazie rozruch uzwojenia
+        stojana łączone są w gwiazdę. Powoduje to <b>sqrt(3)</b>- krotne zmniejszenie prądu rozruchu w stojanie i
+        wirniku. Jednak równocześnie zmniejsza się 3- krotnie moment rozruchowy. Z tego względu rozruch
+        silnika powinien być przeprowadzany bez obciążenia lub ze znacznie zmniejszonym obciążeniem. Po
+        osiągnięciu przez silnik odpowiednich obrotów następuje przełączenie uzwojeń stojana na połączenie w
+        trójkąt.</p>
+        
+        <h3>Opis stanowiska</h3>
+        <p>Na panelu znajdują się cztery przyciski:</p>
+        <ul>
+            <li class="lidot">SR - rozruch silnika - kierunek obrotów w prawo</li>
+            <li class="lidot">ST - zatrzymanie silnika</li>
+            <li class="lidot">SL - rozruch silnika - kierunek obrotów w lewo</li>
+            <li class="lidot">UB - symulacja przeciążenia silnika</li>
+        </ul>
+        <p>Cztery styki przełączają tryb pracy silnika:</p>
+        <ul>
+            <li class="lidot">K1 - obroty w prawo</li>
+            <li class="lidot">K2 - obroty w lewo</li>
+            <li class="lidot">K3 - praca przy połączeniu uzwojeń stojana w gwiazdę</li>
+            <li class="lidot">K4 - praca przy połączeniu uzwojeń stojana w trójkąt</li>
+        </ul>
+        <p>Równolegle z wymienionymi wyżej stykami zamontowane są cztery styki potwierdzające załączenie lub
+        wyłączenie odpowiedniego styku K1-K4. Są to odpowiednio:</p>
+        <ul>
+            <li class="lidot">SK1 - styk potwierdzający załączenie/wyłączenie styku K1</li>
+            <li class="lidot">SK2 - styk potwierdzający załączenie/wyłączenie styku K2</li>
+            <li class="lidot">SK3 - styk potwierdzający załączenie/wyłączenie styku K3</li>
+            <li class="lidot">SK4 - styk potwierdzający załączenie/wyłączenie styku K4</li>
+        </ul>
+        
+        <h3>Sposób połączenia ze sterownikiem</h3>
+        <p>Wejścia cyfrowe:</p>
+        <table border="2" width="100%">
+        <tr>
+            <td class="tdTitle">Numer wejścia</td>
+            <td class="tdTitle">Oznaczenie</td>
+            <td class="tdTitle">Przeznaczenie</td>
+            <td class="tdTitle">Typ styku</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I1</td>
+            <td class="tdContent">SR</td>
+            <td class="tdContent">obroty w prawo</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I2</td>
+            <td class="tdContent">SL</td>
+            <td class="tdContent">obroty w lewo </td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I3</td>
+            <td class="tdContent">ST</td>
+            <td class="tdContent">stop</td>
+            <td class="tdContent">normalnie zamknięty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I4</td>
+            <td class="tdContent">UB</td>
+            <td class="tdContent">przeciążenie</td>
+            <td class="tdContent">normalnie zamknięty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I5</td>
+            <td class="tdContent">SK1</td>
+            <td class="tdContent">potwierdzenie zadziałania styku K1</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I6</td>
+            <td class="tdContent">SK2</td>
+            <td class="tdContent">potwierdzenie zadziałania styku K2</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I7</td>
+            <td class="tdContent">SK3</td>
+            <td class="tdContent">potwierdzenie zadziałania styku K3</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I8</td>
+            <td class="tdContent">SK4</td>
+            <td class="tdContent">potwierdzenie zadziałania styku K4</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I9</td>
+            <td class="tdContent">L</td>
+            <td class="tdContent">symulacja zadziałania wyłącznika krańcowego obrotów w lewo</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        <tr>
+            <td class="tdContent">I10</td>
+            <td class="tdContent">R</td>
+            <td class="tdContent">symulacja zadziałania wyłącznika krańcowego obrotów w prawo</td>
+            <td class="tdContent">normalnie otwarty</td>
+        </tr>
+        </table>
+        <p>Wyjścia cyfrowe:</p>
+        <table border="2" width="100%">
+        <tr>
+            <td class="tdTitle">Numer wyjścia</td>
+            <td class="tdTitle">Oznaczenie</td>
+            <td class="tdTitle">Przeznaczenie</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q1</td>
+            <td class="tdContent">K1</td>
+            <td class="tdContent">sterowanie cewką K1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q2</td>
+            <td class="tdContent">K2</td>
+            <td class="tdContent">sterowanie cewką K2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q3</td>
+            <td class="tdContent">K3</td>
+            <td class="tdContent">sterowanie cewką K3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">Q4</td>
+            <td class="tdContent">K4</td>
+            <td class="tdContent">sterowanie cewką K4</td>
+        </tr>
+        </table>
+        <h2>Program ćwiczenia</h2>
+        <p>Celem ćwiczenia jest napisanie programu sterującego silnikiem trójfazowym.
+        Wymagania dotyczące programu:</p>
+        <h4>Rozruch:</h4>
+        <p>Po naciśnięciu przycisku SR (obroty w prawo) lub SL (obroty w lewo) działa styk K3
+        (połączenie w gwiazdę). Po 0.2s działa styk K1 lub K2 w zależności od tego czy naciśnięty
+        został odpowiednio przycisk SR czy SL.
+        Po upływie 8s, gdy silnik osiągnie odpowiednie obroty, następuje przełączenie silnika z
+        "gwiazdy" w "trójkąt". Przestaje działać styk K3, a po 0.2s zostaje włączony styk K4.
+        Opóźnienie między wyłączeniem styku K3 a załączeniem K4 zapobiega zwarciu i zlepieniu się
+        styków.</p>
+        <h4>Wyłączenie</h4>
+        <p>Napęd wyłącza się po naciśnięciu przycisku ST (stop). Program sterujący wyłącza w tym
+        przypadku wszystkie styki.</p>
+        <h4>Przeciążenie</h4>
+        <p>Przycisk UB symuluje wystąpienie przeciążenia silnika.
+        W przypadku pracy silnika przy połączeniu w gwiazdę naciśnięcie przycisku UB powoduje
+        natychmiastowe wyłączenie silnika.
+        W przypadku pracy silnika przy połączeniu w trójkąt silnik wytrzymuje krótkotrwałe
+        przeciążenie (do 3s). W przypadku, gdy przeciążenie trwa dłużej niż 3s następuje wyłączenie
+        silnika. Ponowne włączenie silnika jest możliwe dopiero po uprzednim przyciśnięciu przycisku
+        ST (stop).</p>
+        <h4>Zabezpieczenia</h4>
+        <p>Ze względu na bezpieczeństwo program sterujący powinien posiadać następujące
+        zabezpieczenia:</p>
+        <ul>
+            <li class="lidot">jednoczesne naciśnięcie przycisków SR i SL jest wykrywane i powoduje natychmiastowe
+            wyłączenie silnika. Ponowne włączenie silnika jest możliwe dopiero po uprzednim
+            przyciśnięciu przycisku ST (stop).</li>
+            <li class="lidot">wyjścia cyfrowe sterownika służące do sterowania stykami K1-K4 wzajemnie się blokują,
+            tzn. Q1 blokuje Q2, Q3 blokuje Q4 i na odwrót.</li>
+            <li class="lidot">sygnały I5-I8 potwierdzające odpowiednie zadziałanie styków K1-K4 wykorzystywane są
+            do nadzorowana pracy silnika.</li>
+        </ul>
+        <h4>Wyłączniki krańcowe</h4>
+        <p>Program
+        sterujący powinien spełniać następujące wymagania:</p>
+        <ul>
+            <li class="lidot">gdy przy wirowaniu silnika w prawo uaktywniony zostanie wyłącznik 
+                krańcowy prawy:
+            <ol>silnik zostaje natychmiast wyłączony,<br/>
+            uruchomienie silnika w prawo powinno być w tym przypadku niemożliwe,<br/>
+            istnieje możliwość uruchomienia silnika <i><u>tylko i wyłącznie</u></i> w przeciwnym 
+                kierunku. Po przyciśnięciu przycisku SL silnik zaczyna się obracać w przeciwnym 
+                kierunku.</ol></li>
+            <li class="lidot">gdy przy wirowaniu silnika w lewo uaktywniony zostanie wyłącznik 
+                krańcowy prawy:
+            <ol>silnik zostaje natychmiast wyłączony,<br/>
+            uruchomienie silnika w lewo powinno być w tym przypadku niemożliwe,<br/>
+            istnieje możliwość uruchomienia silnika <i><u>tylko i wyłącznie</u></i> w przeciwnym kierunku. Po
+            przyciśnięciu przycisku SR silnik zaczyna się obracać w przeciwnym kierunku i
+            jednocześnie gaśnie lampka.</ol></li>
+        </ul>
+
+        <h2>Zadania</h2>
+        <ol>
+            <h3>Wariant A</h3>
+            <p>Rozruch silnika z przełączeniem gwiazda - trójkąt</p>
+            <h3>Wariant B</h3>
+            <p>Rozruch silnika z przełączeniem gwiazda - trójkąt i wyłącznikami krańcowymi</p>
+            <h3>Wariant C</h3>
+            <p>Rozruch silnika z przełączeniem gwiazda - trójkąt, wyłącznikami krańcowymi i
+            automatyczną zmianą kierunku wirowania</p>
+        </ol>
+	</body>
+</html>

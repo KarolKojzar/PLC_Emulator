@@ -1,0 +1,5 @@
+GE_Fanuc %AI 0 0 0 %AQ 0 0 0 %I 0 0 0 %Q 0 0 0
+Modicon %4 0 0 0 %3 0 0 0 %0 0 0 0 %1 0 0 0
+Allen-Bradley I: 0 0 8 O: 0 0 8 I: 0 0 8 O: 0 0 8
+Simatic IW 0 0 0 QW 0 0 0 I 0 0 8 Q 0 0 8
+Reaktor %AI 1 0 0 %AQ 1 0 0 %I 1 0 0 %Q 1 0 0

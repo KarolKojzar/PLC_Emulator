@@ -1,0 +1,176 @@
+﻿<html>
+    <style type="text/css">
+        h1 { color: Black; text-decoration:underline; text-align:center }
+        h2 { color: Black; text-decoration:underline }
+        h3 { color: Black; text-decoration:underline }
+        p.pitalic { color: Black; font-style:italic }
+        li.liabc { list-style-type:lower-alpha }
+        li.lidot { list-style-type:disc }
+        li.li123 { list-style-type:decimal }
+        td.tdTitle { border-style: none;
+            border-color: inherit;
+            border-width: 2;
+            background-color:Gray;
+            text-align: center;
+        }
+        td.tdContent { text-align: center }
+    </style>
+	<body>
+        <h1>Control of the Chemical Reactor</h1>
+        <p>AC Motor user control simulates the process model of a chemical reaction tank, 
+            including the controlled systems for temperature and feeding level.<br />
+            In combination with the PC’s (Programmable Controller) control functions it is 
+            possible to solve various training exercises of control engineering.
+            <br />
+            The reaction vessel is equipped with a double-walled jacket. A heating and 
+            cooling medium can be pumped through the interstice of the vessel. Inside the 
+            vessel two sensors are installed (for the present product temperature and the 
+            present feeding level) and a paddle mixer.</p>
+            
+        <h3>PROCESS DESCRIPTION</h3>
+	    <p>Our example process can be divided into 4 phases:</p>
+	    <ul>
+	        <li class="li123"><b>Feeding the vessel.</b><br />
+                During this phase the vessel is being fed with two products via two binary 
+                valves: V1 and V2.</li>
+	        <li class="li123"><b>Heating and stabilizing the product temperature.</b><br />
+                The analog valve AV1 is used as the actuator in order to continuously adjust the 
+                inflow quantity of the heating medium. A PI controller has been used. At the 
+                beginning of heating the product temperature increases linearly until it reaches 
+                the set value (this is obtained by linear increasing the set value for PI 
+                controller). Then the temperature is stabilized for 3 minutes. When this phase 
+                begins, the starting product temperature is stored in a TEM_REG register.</li>
+	        <li class="li123"><b>Cooling the product.</b><br />
+	            The binary valve V3 opens the inflow of the cooling medium. The V4 valve must be 
+                opened too. This phase ends when product temperature reaches the value 
+                previously stored in TEM_PAM register.</li>
+	        <li class="li123"><b>draining off the vesse</b><br />
+	            The drainage quantity of final product is continuously adjustable via an analog 
+                control signal AV1. In this exercise the AV1 valve is treated as a binary valve.</li>
+        </ul>
+        
+        <h3>CONTROL PANEL FUNCTIONS</h3>
+	    <p>There are 3 process control modes:</p>
+	    <ul>
+	        <li class="li123"><b>Manual.</b><br />
+	            Switches from 1 to 4 can be used to start the appropriate phase.</li>
+	        <li class="li123"><b>Auto.</b><br />
+	            6th switch must be on. Then all the four phases are executed continuously.</li>
+	        <li class="li123"><b>One cycle.</b><br />
+	            5th switch must be on. Then all the four phases are executed only once.</li>
+	    </ul>
+	<h3>
+        LIST OF VARIABLES</h3>
+    <p>
+                The  inputs  of  the  PLC  are  the  outputs  of  the  panel. A list of inputs used in this exercise 
+        is presented in a table below.
+    </p>
+    <p>
+        Analog inputs:</p>
+    <table border="2" width="100%">
+        <tr>
+            <td class="tdTitle">Information</td>
+            <td class="tdTitle">Symbol</td>
+        </tr>
+        <tr>
+            <td class="tdContent">present feeding level</td>
+        <td class="tdContent">AI1</td>
+    </tr>
+    <tr>
+        <td class="tdContent">present product temperature</td>
+        <td class="tdContent">AI2</td>
+    </tr>
+    <tr>
+        <td class="tdContent">set-point of feeding level</td>
+            <td class="tdContent">AI3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">set-point of product temperature</td>
+            <td class="tdContent">AI4</td>
+        </tr>
+    </table>
+    <p>Analog outputs:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Information</td>
+            <td class="tdTitle">Symbol</td>
+        </tr>
+        <tr>
+            <td class="tdContent">draining valve</td>
+            <td class="tdContent">AQ1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">heating valve</td>
+            <td class="tdContent">AQ2</td>
+        </tr>
+        </table>
+        
+        <p>Digital inputs:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Information</td>
+            <td class="tdTitle">Symbol</td>
+        </tr>
+        <tr>
+            <td class="tdContent">feeding</td>
+            <td class="tdContent">I1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">heating</td>
+            <td class="tdContent">I2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">cooling</td>
+            <td class="tdContent">I3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">draining</td>
+            <td class="tdContent">I4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">one cycle</td>
+            <td class="tdContent">I5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">auto</td>
+            <td class="tdContent">I6</td>
+        </tr>
+        <tr>
+            <td class="tdContent">feeding ratio</td>
+            <td class="tdContent">I7</td>
+        </tr>
+        </table>
+        
+        <p>Digital outputs:</p>
+        <table border="2" width=100%>
+        <tr>
+            <td class="tdTitle">Information</td>
+            <td class="tdTitle">Symbol</td>
+        </tr>
+        <tr>
+            <td class="tdContent">valve V1</td>
+            <td class="tdContent">Q1</td>
+        </tr>
+        <tr>
+            <td class="tdContent">valve V2</td>
+            <td class="tdContent">Q2</td>
+        </tr>
+        <tr>
+            <td class="tdContent">valve V3</td>
+            <td class="tdContent">Q3</td>
+        </tr>
+        <tr>
+            <td class="tdContent">valve V4</td>
+            <td class="tdContent">Q4</td>
+        </tr>
+        <tr>
+            <td class="tdContent">valve V5</td>
+            <td class="tdContent">Q5</td>
+        </tr>
+        <tr>
+            <td class="tdContent">mixer</td>
+            <td class="tdContent">Q6</td>
+        </tr>
+        </table>
+	</body>
+</html>
