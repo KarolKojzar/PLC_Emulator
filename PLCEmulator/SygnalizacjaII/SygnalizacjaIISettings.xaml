@@ -1,0 +1,8 @@
+﻿<Window x:Class="PLCEmulator.SygnalizacjaII.SygnalizacjaIISettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SygnalizacjaIISettings" MinHeight="300" MinWidth="310" Width="540" Height="480">
+    <Grid>
+        <Image Height="Auto" HorizontalAlignment="Left" Margin="-2,0,0,1" Name="image1" Stretch="Fill" VerticalAlignment="Bottom" Width="Auto" Source="/PLCEmulator;component/SygnalizacjaII/wizualizacje/objasnienie.png" />
+    </Grid>
+</Window>
