@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="PLCEmulator.SygnalizacjaIII.ucSygnalizacjaIII"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="myLabel" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="myCaption" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="myButton" TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="30"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0">
+                <Canvas Name="canvasReaktor" Width="848" Height="728">
+                    <Image Name="skrzyzowanie" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/skrzyzowanie.png" Width="848" Height="728" />
+                    <Image Name="samochod1" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd1.png" Width="848" Height="728" />
+                    <Image Name="samochod1_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd1_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd2.png" Width="848" Height="728" />
+                    <Image Name="samochod2_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd2_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod3" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd3.png" Width="848" Height="728" />
+                    <Image Name="samochod3_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd3_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod4" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd4.png" Width="848" Height="728" />
+                    <Image Name="samochod4_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd4_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod5" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd5.png" Width="848" Height="728" />
+                    <Image Name="samochod6" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd6.png" Width="848" Height="728" />
+                    <Image Name="samochod6_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd6_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod6_skret_2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd6_skret_2.png" Width="848" Height="728" />
+                    <Image Name="samochod7" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd7.png" Width="848" Height="728" />
+                    <Image Name="samochod7_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd7_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod8" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd8.png" Width="848" Height="728" />
+                    <Image Name="samochod8_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd8_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod8_skret_2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd8_skret_2.png" Width="848" Height="728" />
+                    <Image Name="samochod9" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd9.png" Width="848" Height="728" />
+                    <Image Name="samochod9_skret" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd9_skret.png" Width="848" Height="728" />
+                    <Image Name="samochod10" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/pojazd10.png" Width="848" Height="728" />
+                    <Image Name="sygnalizacje" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/sygnalizacje.png" Width="848" Height="728" />
+                    <Image Name="zielone1" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_1.png" Width="848" Height="728" />
+                    <Image Name="zolte1" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_1.png" Width="848" Height="728" />
+                    <Image Name="czerwone1" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_1.png" Width="848" Height="728" />
+                    <Image Name="zielone2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_2.png" Width="848" Height="728" />
+                    <Image Name="zolte2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_2.png" Width="848" Height="728" />
+                    <Image Name="czerwone2" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_2.png" Width="848" Height="728" />
+                    <Image Name="zielone3" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_3.png" Width="848" Height="728" />
+                    <Image Name="zolte3" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_3.png" Width="848" Height="728" />
+                    <Image Name="czerwone3" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_3.png" Width="848" Height="728" />
+                    <Image Name="zielone4" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_4.png" Width="848" Height="728" />
+                    <Image Name="zolte4" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_4.png" Width="848" Height="728" />
+                    <Image Name="czerwone4" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_4.png" Width="848" Height="728" />
+                    <Image Name="zielone5" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_5.png" Width="848" Height="728" />
+                    <Image Name="zolte5" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_5.png" Width="848" Height="728" />
+                    <Image Name="czerwone5" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_5.png" Width="848" Height="728" />
+                    <Image Name="zielone6" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_6.png" Width="848" Height="728" />
+                    <Image Name="zolte6" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_6.png" Width="848" Height="728" />
+                    <Image Name="czerwone6" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_6.png" Width="848" Height="728" />
+                    <Image Name="zielone7" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_7.png" Width="848" Height="728" />
+                    <Image Name="zolte7" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_7.png" Width="848" Height="728" />
+                    <Image Name="czerwone7" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_7.png" Width="848" Height="728" />
+                    <Image Name="zielone8" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_8.png" Width="848" Height="728" />
+                    <Image Name="zolte8" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_8.png" Width="848" Height="728" />
+                    <Image Name="czerwone8" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_8.png" Width="848" Height="728" />
+                    <Image Name="zielone9" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_9.png" Width="848" Height="728" />
+                    <Image Name="czerwone9" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_9.png" Width="848" Height="728" />
+                    <Image Name="zielone10" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_10.png" Width="848" Height="728" />
+                    <Image Name="zolte10" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_10.png" Width="848" Height="728" />
+                    <Image Name="czerwone10" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_10.png" Width="848" Height="728" />
+                    <Image Name="zielone11" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_11.png" Width="848" Height="728" />
+                    <Image Name="zolte11" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_11.png" Width="848" Height="728" />
+                    <Image Name="czerwone11" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_11.png" Width="848" Height="728" />
+                    <Image Name="zielone12" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_12.png" Width="848" Height="728" />
+                    <Image Name="zolte12" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_12.png" Width="848" Height="728" />
+                    <Image Name="czerwone12" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_12.png" Width="848" Height="728" />
+                    <Image Name="zielone13" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_13.png" Width="848" Height="728" />
+                    <Image Name="zolte13" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_13.png" Width="848" Height="728" />
+                    <Image Name="czerwone13" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_13.png" Width="848" Height="728" />
+                    <Image Name="zielone14" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_14.png" Width="848" Height="728" />
+                    <Image Name="zolte14" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_14.png" Width="848" Height="728" />
+                    <Image Name="czerwone14" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_14.png" Width="848" Height="728" />
+                    <Image Name="zielone15" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zielone_15.png" Width="848" Height="728" />
+                    <Image Name="zolte15" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/zolte_15.png" Width="848" Height="728" />
+                    <Image Name="czerwone15" Source="/PLCEmulator;component/SygnalizacjaIII/wizualizacje/czerwone_15.png" Width="848" Height="728" />
+                    <Label Name="labelWarning" HorizontalContentAlignment="Center" Canvas.Top="50" Width="848" FontSize="50" Foreground="Red" Opacity="0.7" FontWeight="Bold" Visibility="Hidden"/>
+                    <Label Name="labelFala" HorizontalContentAlignment="Center" Canvas.Top="175" Width="848" FontSize="50" Foreground="Red" Opacity="0.7" FontWeight="Bold" Visibility="Hidden"/>
+                    <Label Name="labelKolizja" HorizontalContentAlignment="Center" Canvas.Top="300" Width="848" FontSize="50" Foreground="Red" Opacity="0.7" FontWeight="Bold" Visibility="Hidden"/>
+                    <Grid Canvas.Left="0" Canvas.Top="400" Height="250" Name="grid1" Width="180" Background="#FF000004">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+
+                        <Image Height="Auto" Name="auto1" Width="30" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" MouseLeftButtonUp="auto1_MouseLeftButtonUp" Margin="40,0,88,0" />
+                        <Image Height="Auto" Name="auto1_brak" Width="30" MouseLeftButtonDown="auto1_brak_MouseLeftButtonDown" Style="{StaticResource myButton}" Visibility="Visible" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Margin="40,0,88,0" />
+                        
+                        <Image Height="Auto" MouseLeftButtonUp="auto2_MouseLeftButtonUp" Name="auto2" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,49" Grid.RowSpan="2" Grid.Row="1" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto2_brak_MouseLeftButtonDown" Name="auto2_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,49" Grid.RowSpan="2" Grid.Row="1" />
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto3_MouseLeftButtonUp" Name="auto3" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,49,88,1" Grid.Row="1" Grid.RowSpan="2" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto3_brak_MouseLeftButtonDown" Name="auto3_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,49,88,1" Grid.Row="1" Grid.RowSpan="2" />
+
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto4_MouseLeftButtonUp" Name="auto4" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,0" Grid.Row="3" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto4_brak_MouseLeftButtonDown" Name="auto4_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,0" Grid.Row="3" />
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto5_MouseLeftButtonUp" Name="auto5" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,0" Grid.Row="4" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto5_brak_MouseLeftButtonDown" Name="auto5_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,0" Grid.Row="4" />
+
+                        <Label Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car1" VerticalAlignment="Top" Width="70" Foreground="#FFFCFCFF" FontSize="15" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car2" VerticalAlignment="Top" Width="70" Grid.Row="1" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car3" VerticalAlignment="Top" Width="70" Grid.Row="2" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car4" VerticalAlignment="Top" Width="70" Grid.Row="3" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car5" VerticalAlignment="Top" Width="70" Grid.Row="4" FontWeight="Bold" />
+                        <Label Content="DI1" Height="25" Name="labelDI1" Style="{StaticResource myCaption}" Margin="0,13,0,12" Foreground="White" HorizontalAlignment="Left" Width="37" />
+                        <Label Content="DI4" Height="25" Name="labelDI4" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="3" Foreground="White" />
+                        <Label Content="DI5" Height="25" Name="labelDI5" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="4" Foreground="White" />
+                        <Label Content="DI3" Height="25" Name="labelDI3" Style="{StaticResource myCaption}" Margin="0,12,121,13" Grid.Row="2" Foreground="White" />
+                        <Label Content="DI2" Height="25" Name="labelDI2" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="1" Foreground="White" />
+                    </Grid>
+                    <Grid Canvas.Left="210" Canvas.Top="400" Height="250" Name="grid2" Width="180" Background="#FF000004">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+
+                        <Image Height="Auto" Name="auto6" Width="30" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" MouseLeftButtonUp="auto6_MouseLeftButtonUp" Margin="40,0,88,0" />
+                        <Image Height="Auto" Name="auto6_brak" Width="30" MouseLeftButtonDown="auto6_brak_MouseLeftButtonDown" Style="{StaticResource myButton}" Visibility="Visible" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Margin="40,0,88,0" />
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto7_MouseLeftButtonUp" Name="auto7" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,49" Grid.RowSpan="2" Grid.Row="1" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto7_brak_MouseLeftButtonDown" Name="auto7_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,49" Grid.RowSpan="2" Grid.Row="1" />
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto8_MouseLeftButtonUp" Name="auto8" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,49,88,1" Grid.Row="1" Grid.RowSpan="2" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto8_brak_MouseLeftButtonDown" Name="auto8_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,49,88,1" Grid.Row="1" Grid.RowSpan="2" />
+
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto9_MouseLeftButtonUp" Name="auto9" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,0" Grid.Row="3" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto9_brak_MouseLeftButtonDown" Name="auto9_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,0" Grid.Row="3" />
+
+                        <Image Height="Auto" MouseLeftButtonUp="auto10_MouseLeftButtonUp" Name="auto10" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonON.jpg" Style="{StaticResource myButton}" Visibility="Collapsed" Width="30" Margin="40,0,88,0" Grid.Row="4" />
+                        <Image Height="Auto" MouseLeftButtonDown="auto10_brak_MouseLeftButtonDown" Name="auto10_brak" Source="/PLCEmulator;component/Sygnalizacja/obrazy/buttonOFF.jpg" Style="{StaticResource myButton}" Visibility="Visible" Width="30" Margin="40,0,88,0" Grid.Row="4" />
+
+                        <Label Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car6" VerticalAlignment="Top" Width="70" Foreground="#FFFCFCFF" FontSize="15" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car7" VerticalAlignment="Top" Width="70" Grid.Row="1" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car8" VerticalAlignment="Top" Width="70" Grid.Row="2" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car9" VerticalAlignment="Top" Width="70" Grid.Row="3" FontWeight="Bold" />
+                        <Label FontSize="15" Foreground="#FFFCFCFF" Height="30" HorizontalAlignment="Left" Margin="90,11,0,0" Name="car10" VerticalAlignment="Top" Width="85" Grid.Row="4" FontWeight="Bold" />
+                        <Label Content="DI6" Height="25" Name="labelDI6" Style="{StaticResource myCaption}" Margin="0,13,0,12" Foreground="White" HorizontalAlignment="Left" Width="37" />
+                        <Label Content="DI7" Height="25" Name="labelDI7" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="3" Foreground="White" />
+                        <Label Content="DI8" Height="25" Name="labelDI8" Style="{StaticResource myCaption}" Margin="0,12,121,13" Grid.Row="2" Foreground="White" />
+                        <Label Content="DI9" Height="25" Name="labelDI9" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="1" Foreground="White" />
+                        <Label Content="DI10" Height="25" Name="labelDI10" Style="{StaticResource myCaption}" Margin="0,13,121,12" Grid.Row="4" Foreground="White" />
+                    </Grid>
+                    <Label Canvas.Left="622" Canvas.Top="583" Content="DO1" Height="25" Name="labelDO1" Width="45" Style="{StaticResource myCaption}" />
+                    <Label Canvas.Left="672" Canvas.Top="582" Content="DO2" Height="25" Name="labelDO2" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="764" Canvas.Top="456" Content="DO3" Height="25" Name="labelDO3" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="570" Canvas.Top="480" Content="DO4" Height="25" Name="labelDO4" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="500" Canvas.Top="592" Content="DO5" Height="25" Name="labelDO5" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="658" Canvas.Top="288" Content="DO6" Height="25" Name="labelDO6" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="572" Canvas.Top="125" Content="DO7" Height="25" Name="labelDO7" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="500" Canvas.Top="234" Content="DO8" Height="25" Name="labelDO8" Style="{StaticResource myCaption}" Width="45" />
+                    <Label Canvas.Left="397" Canvas.Top="89" Content="DO9" Height="25" Name="labelDO9" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="318" Canvas.Top="108" Content="DO10" Height="25" Name="labelDO10" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="194" Canvas.Top="122" Content="DO11" Height="25" Name="labelDO11" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="133" Canvas.Top="122" Content="DO12" Height="25" Name="labelDO12" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="83" Canvas.Top="229" Content="DO13" Height="25" Name="labelDO13" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="198" Canvas.Top="222" Content="DO14" Height="25" Name="labelDO14" Style="{StaticResource myCaption}" Width="62" />
+                    <Label Canvas.Left="257" Canvas.Top="222" Content="DO15" Height="25" Name="labelDO15" Style="{StaticResource myCaption}" Width="62" />
+                </Canvas>
+            </Viewbox>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <StackPanel Name="stackPanelSterring">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="177*" />
+                    <ColumnDefinition Width="123*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Label Style="{StaticResource myLabel}" Name="lblSimulationSpeed"></Label>
+                    <Label Style="{StaticResource myLabel}" Content="{Binding ElementName=sliderFastness, Path=Value}"/>
+                    <Label Style="{StaticResource myLabel}">[ms]</Label>
+                    <Button Name="buttonPauseStart" Margin="30 2 2 2" Click="buttonPauseStart_Click"></Button>
+                </StackPanel>
+            </Grid>
+            <Slider MouseLeave="sliderFastness_MouseLeave" Name="sliderFastness" Minimum="5" Maximum="500" TickFrequency="5" IsSnapToTickEnabled="True"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

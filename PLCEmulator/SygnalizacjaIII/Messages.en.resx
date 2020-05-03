@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="msgAwaria" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="msgFala" xml:space="preserve">
+    <value>No "Green Wave"</value>
+  </data>
+  <data name="msgNoConnection" xml:space="preserve">
+    <value>No hardware connection</value>
+  </data>
+  <data name="msgPauseSimulation" xml:space="preserve">
+    <value>Pause simulation</value>
+    <comment>Opis przycisku zatrzymania symulacji.</comment>
+  </data>
+  <data name="msgPodsumowanie" xml:space="preserve">
+    <value>% cars leaves the crossroads without collision.</value>
+  </data>
+  <data name="msgPojazd1" xml:space="preserve">
+    <value>Car 1</value>
+  </data>
+  <data name="msgPojazd10" xml:space="preserve">
+    <value>Car 10</value>
+  </data>
+  <data name="msgPojazd2" xml:space="preserve">
+    <value>Car 2</value>
+  </data>
+  <data name="msgPojazd3" xml:space="preserve">
+    <value>Car 3</value>
+  </data>
+  <data name="msgPojazd4" xml:space="preserve">
+    <value>Car 4</value>
+  </data>
+  <data name="msgPojazd5" xml:space="preserve">
+    <value>Car 5</value>
+  </data>
+  <data name="msgPojazd6" xml:space="preserve">
+    <value>Car 6</value>
+  </data>
+  <data name="msgPojazd7" xml:space="preserve">
+    <value>Car 7</value>
+  </data>
+  <data name="msgPojazd8" xml:space="preserve">
+    <value>Car 8</value>
+  </data>
+  <data name="msgPojazd9" xml:space="preserve">
+    <value>Car 9</value>
+  </data>
+  <data name="msgSimulationSpeed" xml:space="preserve">
+    <value>Simulation speed</value>
+    <comment>Opis etykiety prędkość symulacji.</comment>
+  </data>
+  <data name="msgStartSimulation" xml:space="preserve">
+    <value>Start simulation</value>
+    <comment>Opis przycisku uruchomienia symulacji.</comment>
+  </data>
+  <data name="msgStartTest" xml:space="preserve">
+    <value>Start test</value>
+    <comment>Etykieta dla przycisku w trybie test.</comment>
+  </data>
+  <data name="msgStopTest" xml:space="preserve">
+    <value>Stop test</value>
+    <comment>Etykieta dla przycisku w trybie test.</comment>
+  </data>
+  <data name="msgTest1" xml:space="preserve">
+    <value>The vehicle 1 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest10" xml:space="preserve">
+    <value>The vehicle 10 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest2" xml:space="preserve">
+    <value>The vehicle 2 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest3" xml:space="preserve">
+    <value>The vehicle 3 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest4" xml:space="preserve">
+    <value>The vehicle 4 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest5" xml:space="preserve">
+    <value>The vehicle 5 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest6" xml:space="preserve">
+    <value>The vehicle 6 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest7" xml:space="preserve">
+    <value>The vehicle 7 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest8" xml:space="preserve">
+    <value>The vehicle 8 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest9" xml:space="preserve">
+    <value>The vehicle 9 appeared at the crossroads</value>
+  </data>
+  <data name="msgTest_opuszczenie1" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 1</value>
+  </data>
+  <data name="msgTest_opuszczenie10" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 10</value>
+  </data>
+  <data name="msgTest_opuszczenie2" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 2</value>
+  </data>
+  <data name="msgTest_opuszczenie3" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 3</value>
+  </data>
+  <data name="msgTest_opuszczenie4" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 4</value>
+  </data>
+  <data name="msgTest_opuszczenie5" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 5</value>
+  </data>
+  <data name="msgTest_opuszczenie6" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 6</value>
+  </data>
+  <data name="msgTest_opuszczenie7" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 7</value>
+  </data>
+  <data name="msgTest_opuszczenie8" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 8</value>
+  </data>
+  <data name="msgTest_opuszczenie9" xml:space="preserve">
+    <value>Crossroads leaves the vehicle 9</value>
+  </data>
+  <data name="msgWarning" xml:space="preserve">
+    <value>COLLISION SIGNALS</value>
+    <comment>Etykieta ostrzeżenia</comment>
+  </data>
+  <data name="msgWarning_car" xml:space="preserve">
+    <value>VEHICLE COLLISION</value>
+  </data>
+  <data name="testEnd" xml:space="preserve">
+    <value>End of test</value>
+  </data>
+  <data name="testInfoHeader" xml:space="preserve">
+    <value>&lt;h1&gt;TEST mode&lt;/h1&gt;</value>
+  </data>
+  <data name="testInfoInfo" xml:space="preserve">
+    <value>&lt;p&gt;This mode tests the correctness of the program in the PLC.&lt;/p&gt; &lt;p&gt;Press the &gt;Start test&lt; button to start the test.&lt;/p&gt; &lt;p&gt;Test results will be displayed below:&lt;/p&gt;</value>
+  </data>
+  <data name="testInfoMain" xml:space="preserve">
+    <value>&lt;html&gt;&lt;style type=\"text/css\"&gt; h1 { color: Black; text-decoration:underline; text-align:center } h2 { color: Black; text-decoration:underline } h3 { color: Black; text-decoration:underline } p.pitalic { color: Black; font-style:italic } li.liabc { list-style-type:lower-alpha } li.lidot { list-style-type:disc } td.tdTitle { background-color:Gray; border:2 } td.tdContent { text-align: center } td.tdRed { color: Red }&lt;/style&gt;&lt;body&gt;</value>
+  </data>
+</root>

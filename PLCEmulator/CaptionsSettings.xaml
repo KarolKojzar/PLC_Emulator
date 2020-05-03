@@ -1,0 +1,169 @@
+﻿<Window x:Class="PLCEmulator.CaptionsSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="CaptionsSettings" Background="#FFD4D0C8" Icon="icona.ico" Width="620" Height="480" Closed="Window_Closed">
+    <Window.Resources>
+        <Style x:Key="myLabel" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="myRadioButton" TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <Style x:Key="myTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style x:Key="myTextBox2" TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style x:Key="myLabel2" TargetType="{x:Type Label}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0 5 0 5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel Orientation="Vertical">
+        <GroupBox Header="gbView" Name="gbView">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Name="lblViewAnalog" HorizontalAlignment="Center" Style="{StaticResource myLabel}">Analogowe</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="lblViewAOHeader" Style="{StaticResource myLabel}">Wyjścia:</Label>
+                        <Label Name="lblViewAOSymbol" Style="{StaticResource myLabel2}">%AO</Label>
+                        <Label Name="lblViewAONo" Style="{StaticResource myLabel2}">0</Label>
+                        <Label Name="lblViewAODot" Style="{StaticResource myLabel2}">.</Label>
+                        <Label Name="lblViewAOBit" Style="{StaticResource myLabel2}">0</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="lblViewAIHeader" Style="{StaticResource myLabel}">Wejścia:</Label>
+                        <Label Name="lblViewAISymbol" Style="{StaticResource myLabel2}">%AI</Label>
+                        <Label Name="lblViewAINo" Style="{StaticResource myLabel2}">0</Label>
+                        <Label Name="lblViewAIDot" Style="{StaticResource myLabel2}">.</Label>
+                        <Label Name="lblViewAIBit" Style="{StaticResource myLabel2}">0</Label>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label Name="lblViewDigital" HorizontalAlignment="Center" Style="{StaticResource myLabel}">Cyfrowe</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="lblViewDOHeader" Style="{StaticResource myLabel}">Wyjścia:</Label>
+                        <Label Name="lblViewDOSymbol" Style="{StaticResource myLabel2}">%DO</Label>
+                        <Label Name="lblViewDONo" Style="{StaticResource myLabel2}">0</Label>
+                        <Label Name="lblViewDODot" Style="{StaticResource myLabel2}">.</Label>
+                        <Label Name="lblViewDOBit" Style="{StaticResource myLabel2}">0</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Name="lblViewDIHeader" Style="{StaticResource myLabel}">Wejścia:</Label>
+                        <Label Name="lblViewDISymbol" Style="{StaticResource myLabel2}">%DI</Label>
+                        <Label Name="lblViewDINo" Style="{StaticResource myLabel2}">0</Label>
+                        <Label Name="lblViewDIDot" Style="{StaticResource myLabel2}">.</Label>
+                        <Label Name="lblViewDIBit" Style="{StaticResource myLabel2}">0</Label>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Wybierz typ" Name="gbSetType">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="2" Grid.Column="0">
+                    <Label Name="lblSettings" Style="{StaticResource myLabel}">Ustawienia:</Label>
+                    <ComboBox Name="cbSettings" Margin="5 2 5 5" SelectionChanged="cbSettings_SelectionChanged"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="buttonSaveConf" Margin="2" Padding="2" Click="buttonSaveConf_Click">Zapisz</Button>
+                        <Button Name="buttonSaveConfAs" Margin="2" Padding="2" Click="buttonSaveConfAs_Click">Zapisz jako ...</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Zdefiniuj własny" Name="gbUserDefine">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="lblUserDefSymbol" Style="{StaticResource myLabel}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center">Symbol</Label>
+                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                        <Label Name="lblUserDefValue0" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">Wartość</Label>
+                        <Label Name="lblUserDefValueStart0" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">poczatkowa</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="0" >
+                        <Label Name="lblUserDefValue1" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">Wartość</Label>
+                        <Label Name="lblUserDefValueStart1" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">poczatkowa</Label>
+                        <Label Name="lblUserDefValueByte" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">bajtu</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="4" Grid.Row="0" >
+                        <Label Name="lblUserDefValue2" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">Wartość</Label>
+                        <Label Name="lblUserDefValueStart2" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">poczatkowa</Label>
+                        <Label Name="lblUserDefValueBit" Margin="0 0 0 0" Padding="2 0 2 0" HorizontalAlignment="Center">bitu</Label>
+                    </StackPanel>
+                    <Label Name="lblUserDefNumeration" Style="{StaticResource myLabel}" Grid.Column="5" Grid.Row="0" HorizontalAlignment="Center">Numeracja</Label>
+                    <Label Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="1">Wejście cyfrowe:</Label>
+                    <TextBox Name="lblUserDefineSymbol2" Style="{StaticResource myTextBox2}" Grid.Column="1" Grid.Row="1" TextChanged="UserDefineSymbol_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValue2" Style="{StaticResource myTextBox2}" Grid.Column="2" Grid.Row="1" TextChanged="UserDefineStartValue_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueByte2" Style="{StaticResource myTextBox2}" Grid.Column="3" Grid.Row="1" TextChanged="UserDefineStartValueByte_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueBit2" Style="{StaticResource myTextBox2}" Grid.Column="4" Grid.Row="1" TextChanged="UserDefineStartValueBit_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineNumeration2" Style="{StaticResource myTextBox2}" Grid.Column="5" Grid.Row="1" TextChanged="UserDefineNumeration_TextChanged"></TextBox>
+                    <Label Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="2">Wyjście cyfrowe:</Label>
+                    <TextBox Name="lblUserDefineSymbol3" Style="{StaticResource myTextBox2}" Grid.Column="1" Grid.Row="2" TextChanged="UserDefineSymbol_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValue3" Style="{StaticResource myTextBox2}" Grid.Column="2" Grid.Row="2" TextChanged="UserDefineStartValue_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueByte3" Style="{StaticResource myTextBox2}" Grid.Column="3" Grid.Row="2" TextChanged="UserDefineStartValueByte_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueBit3" Style="{StaticResource myTextBox2}" Grid.Column="4" Grid.Row="2" TextChanged="UserDefineStartValueBit_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineNumeration3" Style="{StaticResource myTextBox2}" Grid.Column="5" Grid.Row="2" TextChanged="UserDefineNumeration_TextChanged"></TextBox>
+                    <Label Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="3">Wyjście analogowe:</Label>
+                    <TextBox Name="lblUserDefineSymbol1" Style="{StaticResource myTextBox2}" Grid.Column="1" Grid.Row="3" TextChanged="UserDefineSymbol_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValue1" Style="{StaticResource myTextBox2}" Grid.Column="2" Grid.Row="3" TextChanged="UserDefineStartValue_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueByte1" Style="{StaticResource myTextBox2}" Grid.Column="3" Grid.Row="3" TextChanged="UserDefineStartValueByte_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueBit1" Style="{StaticResource myTextBox2}" Grid.Column="4" Grid.Row="3" TextChanged="UserDefineStartValueBit_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineNumeration1" Style="{StaticResource myTextBox2}" Grid.Column="5" Grid.Row="3" TextChanged="UserDefineNumeration_TextChanged"></TextBox>
+                    <Label Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="4">Wejście analogowe:</Label>
+                    <TextBox Name="lblUserDefineSymbol0" Style="{StaticResource myTextBox2}" Grid.Column="1" Grid.Row="4" TextChanged="UserDefineSymbol_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValue0" Style="{StaticResource myTextBox2}" Grid.Column="2" Grid.Row="4" TextChanged="UserDefineStartValue_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueByte0" Style="{StaticResource myTextBox2}" Grid.Column="3" Grid.Row="4" TextChanged="UserDefineStartValueByte_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineStartValueBit0" Style="{StaticResource myTextBox2}" Grid.Column="4" Grid.Row="4" TextChanged="UserDefineStartValueBit_TextChanged"></TextBox>
+                    <TextBox Name="lblUserDefineNumeration0" Style="{StaticResource myTextBox2}" Grid.Column="5" Grid.Row="4" TextChanged="UserDefineNumeration_TextChanged"></TextBox>
+                </Grid>
+                <StackPanel Orientation="Vertical" Grid.Column="1">
+                    <GroupBox Header="Numeracja" Margin="5" Name="gbNumerations">
+                        <StackPanel Orientation="Vertical">
+                            <Label Name="lblUserDefineNormalNumeration" Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="4">0 - Zwykła (1; 2; ...)</Label>
+                            <Label Name="lblUserDefine8BitNumeration" Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="4">8 - Bitowa (0.0 - 0.7)</Label>
+                            <Label Name="lblUserDefine16BitNumeration" Style="{StaticResource myLabel}" Grid.Column="0" Grid.Row="4">16 - Bitowa (0.0 - 0.16)</Label>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+            <Button Name="buttonClose" Margin="4" Padding="4" Click="buttonClose_Click">buttonClose</Button>
+            <Button Name="buttonSave" Margin="4" Padding="4" Click="buttonSave_Click">buttonSave</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

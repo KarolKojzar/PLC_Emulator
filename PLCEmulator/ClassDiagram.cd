@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PLCEmulator.MainWindow" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIY8AAQSCAghAARABIEABABoAGBASRgAAOCAQoAAAgA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.TestPanel" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAACEAAkEADIAAAAAAABAAABAAAAcACJAoACAAQ=</HashCode>
+      <FileName>TestPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.USBComm" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAYggAIAQJAQAACABJAgAAAABCAgQAIQAAAAA=</HashCode>
+      <FileName>USBComm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.Reaktor.ucReaktor" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ERBoBEBDCiA0kgRiGKAAHAqgRAgAwQQAghAaBIMAEAQ=</HashCode>
+      <FileName>Reactor\ucReactor.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.Reactor.Reaktor" Collapsed="true">
+    <Position X="2.5" Y="1.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CjACCAhAMIgACAWAGGUBADIgAgYACEyAAgggEYABJDU=</HashCode>
+      <FileName>Reactor\Reaktor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.Tustin" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iACAAAEAAQACAAAEQIAAAAAAAAAgAAAiAEQCAEAAAFA=</HashCode>
+      <FileName>Reactor\Tustin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.ACMotor.ACMotor" Collapsed="true">
+    <Position X="7" Y="2.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gBAEIQAAQigIAAQgAFmBwgCC1BUiAEIAIQBAQg0IABI=</HashCode>
+      <FileName>ACMotor\ACMotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.CaptionsSettings" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAEIAZAiQYAARBAgASAABAAQQDAECAAAAABAEA=</HashCode>
+      <FileName>CaptionsSettings.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.ACMotor.ucACMotor" Collapsed="true">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PLCEmulator.ACMotor.ucACMotor.TabStates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ACMotor\ucACMotor.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="PLCEmulator.ACMotor.ucACMotor.CoilsStates" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ACMotor\ucACMotor.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>A9AgBCAODgAwEwACGIAAHBqgSAgQQAGEABAKBIVAAkI=</HashCode>
+      <FileName>ACMotor\ucACMotor.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.Sygnalizacja.Sygnalizacja" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCUADPAQCBABAAAABAAAgAAAAAAAAgAAAAAAAAACA=</HashCode>
+      <FileName>Sygnalizacja\Sygnalizacja.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.Sygnalizacja.ucSygnalizacja" Collapsed="true">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Q+JiVAwToxA8CgXSuOdcvQq+QAwCURKIwiCaBMkgCgQ=</HashCode>
+      <FileName>Sygnalizacja\ucSygnalizacja.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.SygnalizacjaII.Sygnalizacja" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gASCUBDvAQCBABAACAFAAAgQAAAAIAAgAAAAAAAAACA=</HashCode>
+      <FileName>SygnalizacjaII\SygnalizacjaII.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.SygnalizacjaII.ucSygnalizacjaII" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Q7JwVAwTuxA8CkdTmOdcvQq+SA8CcRKJ0iCaBMkgCgQ=</HashCode>
+      <FileName>SygnalizacjaII\ucSygnalizacjaII.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.SygnalizacjaIII.Sygnalizacja" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/ACSUBjuAQCBABAAAAFAAAgAAAAAAAAAAAAAACAAACA=</HashCode>
+      <FileName>SygnalizacjaIII\SygnalizacjaIII.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PLCEmulator.SygnalizacjaIII.ucSygnalizacjaIII" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AXAwVAwTAjA8iodTnOdcvQquQAgGcRCAkiCaBMkgCgY=</HashCode>
+      <FileName>SygnalizacjaIII\ucSygnalizacjaIII.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PLCEmulator.errorCodes" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAQQABgAEABAgAAEAACACAAAABAAAACAQgAAAABIg=</HashCode>
+      <FileName>USBComm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PLCEmulator.stateCodes" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>USBComm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PLCEmulator.aiTypes" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>USBComm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

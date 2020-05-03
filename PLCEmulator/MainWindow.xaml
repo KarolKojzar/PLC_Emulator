@@ -1,0 +1,90 @@
+﻿<Window x:Class="PLCEmulator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PLCEmulator" MinHeight="600" MinWidth="800" Closed="MainWindow_closed" Icon="icona.ico" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="StoryboardConnectionBlinking" AutoReverse="True" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipseConnection" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                <SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFA0A0A"/>
+                <SplineColorKeyFrame KeyTime="00:00:01" Value="sc#1, 0.208636865, 0.208636865, 0.208636865"/>
+                <SplineColorKeyFrame KeyTime="00:00:02" Value="#FFFF0404"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Background="#FFD4D0C8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" MinWidth="100"/>
+            <ColumnDefinition Width="Auto" MinWidth="2.858"/>
+            <ColumnDefinition Width="10*" MinWidth="400"/>
+            <ColumnDefinition Width="Auto" MinWidth="2.858"/>
+            <ColumnDefinition Width="6*" MinWidth="23" Name="gridHelp"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="22"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0"  Name="SimulatorMenu" Grid.ColumnSpan="5" Background="#FFFFA983">
+            <MenuItem Margin="1" Click="ConnectItem_Click" Name="ConnectMenuItem"/>
+            <MenuItem Margin="1" Click="TestPanel_click" Name="TestPanelMenuItem"/>
+            <MenuItem Margin="1" Name="OptionsMenuItem">
+                <MenuItem Name="CaptionsMenuItem" Margin="1" Click="CaptionsMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer Margin="1" Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsEnabled="True">
+            <TreeView SelectedItemChanged="TreeView_SelectedItemChanged" OpacityMask="#FF7DB110" Foreground="#FF9CCE32" Background="#FFF7FFC7">
+                <TreeViewItem Header="Reaktor" IsExpanded="False" Name="tviReactor" Expanded="tviReactor_Expanded" FontFamily="Arial Rounded MT">
+                    <TreeViewItem Name="tvi1Demo"/>
+                    <TreeViewItem Name="tvi1Simulation"/>
+                    <TreeViewItem Name="tvi1Test"/>
+                    <TreeViewItem Name="tvi1Settings"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Silnik trójfazowy" IsExpanded="False" Name="tviACMotor" Expanded="tviACMotor_Expanded" FontFamily="Arial Rounded MT">
+                    <TreeViewItem Name="tvi2Demo"/>
+                    <TreeViewItem Name="tvi2Simulation"/>
+                    <TreeViewItem Name="tvi2Test"/>
+                    <TreeViewItem Name="tvi2Settings"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Sygnalizacja" IsExpanded="False" Name="tviSygnalizacja" Expanded="tviSygnalizacja_Expanded" FontFamily="Arial Rounded MT" FontStretch="Normal" FontSize="12">
+                    <TreeViewItem Name="tvi3Demo"/>
+                    <TreeViewItem Name="tvi3Simulation"/>
+                    <TreeViewItem Name="tvi3Test"/>
+                    <TreeViewItem Name="tvi3Settings"/>
+                </TreeViewItem>
+                <TreeViewItem Header="SygnalizacjaII" IsExpanded="False" Name="tviSygnalizacjaII" Expanded="tviSygnalizacjaII_Expanded" FontFamily="Arial Rounded MT" FontStretch="Normal" FontSize="12">
+                    <TreeViewItem Name="tvi4Demo"/>
+                    <TreeViewItem Name="tvi4Simulation"/>
+                    <TreeViewItem Name="tvi4Test"/>
+                    <TreeViewItem Name="tvi4Settings"/>
+                </TreeViewItem>
+                <TreeViewItem Header="SygnalizacjaIII" IsExpanded="False" Name="tviSygnalizacjaIII" Expanded="tviSygnalizacjaIII_Expanded" FontFamily="Arial Rounded MT" FontStretch="Normal" FontSize="12">
+                    <TreeViewItem Name="tvi5Demo"/>
+                    <TreeViewItem Name="tvi5Simulation"/>
+                    <TreeViewItem Name="tvi5Test"/>
+                    <TreeViewItem Name="tvi5Settings"/>
+                </TreeViewItem>
+            </TreeView>
+        </ScrollViewer>
+        <GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" Width="0" ResizeBehavior="PreviousAndNext" Cursor="SizeWE"/>
+        <GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1" Width="3" ResizeBehavior="PreviousAndNext" Cursor="SizeWE"/>
+        <ScrollViewer Margin="1" Grid.Row="1" Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <TabControl Grid.Row="1" Grid.Column="2" Name="MainTab">
+            <TabControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.31" />
+                    <GradientStop Color="#FFF7FFC7" Offset="1" />
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem Name="tiDemo" Visibility="Hidden"></TabItem>
+            <TabItem Name="tiSimulation" Visibility="Hidden" />
+            <TabItem Name="tiTest" Visibility="Hidden" />
+        </TabControl>
+        </ScrollViewer>
+        <Ellipse Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,3,0" Name="ellipseConnection" Stroke="Black" Width="15" Height="15" Fill="Black"/>
+        <WebBrowser Grid.Column="4" Grid.Row="1" Opacity="1" Name="webBrowserHelp" OpacityMask="Azure" />
+        <Grid  Grid.Row="2" Grid.ColumnSpan="5" Background="#FFFFA983">
+            <Label Name="lblLanguage" HorizontalAlignment="Right" VerticalAlignment="Center" MouseLeftButtonDown="lblLanguage_MouseLeftButtonDown" MouseEnter="lblLanguage_MouseEnter" MouseLeave="lblLanguage_MouseLeave" Height="22" Margin="0,0,3,0" Width="30" FontSize="10" FontFamily="Arial Rounded MT">EN</Label>
+            
+        </Grid>
+    </Grid>
+</Window>

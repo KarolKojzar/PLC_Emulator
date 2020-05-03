@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6537DD69-2957-4C9D-B330-C9DA3706E02C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PLCEmulator</RootNamespace>
+    <AssemblyName>PLCEmulator</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>icona.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>736A648A6C5FBBD7F9075CA457986B5E0E6515D2</ManifestCertificateThumbprint>
+    <ManifestKeyFile>PLCEmulator_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignManifests>true</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>pl-PL</TargetCulture>
+    <ProductName>PLCEmulator</ProductName>
+    <PublisherName>PLC Signal Generator</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Released|AnyCPU' ">
+    <OutputPath>bin\Released\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Released|x86' ">
+    <OutputPath>bin\x86\Released\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="ACMotor\ACMotorSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ACMotor\ucACMotor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CaptionsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reactor\ReactorSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reactor\ucReactor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SygnalizacjaIII\SygnalizacjaIIISettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SygnalizacjaIII\ucSygnalizacjaIII.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SygnalizacjaII\SygnalizacjaIISettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SygnalizacjaII\ucSygnalizacjaII.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sygnalizacja\SygnalizacjaSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sygnalizacja\ucSygnalizacja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACMotor\ACMotorSettings.xaml.cs">
+      <DependentUpon>ACMotorSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ACMotor\Messages.en.Designer.cs">
+      <DependentUpon>Messages.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CapSettings.cs" />
+    <Compile Include="CaptionsSettings.xaml.cs">
+      <DependentUpon>CaptionsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\ACMotor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ACMotor.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ACMotor\ACMotor.cs" />
+    <Compile Include="ACMotor\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ACMotor\ucACMotor.xaml.cs">
+      <DependentUpon>ucACMotor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Messages.en.Designer.cs">
+      <DependentUpon>Messages.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\Reactor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Reactor.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reactor\Messages.en.Designer.cs">
+      <DependentUpon>Messages.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reactor\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reactor\ReactorSettings.xaml.cs">
+      <DependentUpon>ReactorSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reactor\Reaktor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reactor\Tustin.cs" />
+    <Compile Include="Reactor\ucReactor.xaml.cs">
+      <DependentUpon>ucReactor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Sygnalizacja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Sygnalizacja.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaIII\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaIII\SygnalizacjaIII.cs" />
+    <Compile Include="SygnalizacjaIII\SygnalizacjaIIISettings.xaml.cs">
+      <DependentUpon>SygnalizacjaIIISettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaIII\ucSygnalizacjaIII.xaml.cs">
+      <DependentUpon>ucSygnalizacjaIII.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaII\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaII\SygnalizacjaII.cs" />
+    <Compile Include="SygnalizacjaII\SygnalizacjaIISettings.xaml.cs">
+      <DependentUpon>SygnalizacjaIISettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SygnalizacjaII\ucSygnalizacjaII.xaml.cs">
+      <DependentUpon>ucSygnalizacjaII.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sygnalizacja\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sygnalizacja\Sygnalizacja.cs" />
+    <Compile Include="Sygnalizacja\SygnalizacjaSettings.xaml.cs">
+      <DependentUpon>SygnalizacjaSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sygnalizacja\ucSygnalizacja.xaml.cs">
+      <DependentUpon>ucSygnalizacja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPanel.xaml.cs">
+      <DependentUpon>TestPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USBComm.cs" />
+    <EmbeddedResource Include="ACMotor\Messages.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACMotor\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Messages.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Messages.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reactor\Messages.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reactor\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SygnalizacjaIII\Messages.en.resx" />
+    <EmbeddedResource Include="SygnalizacjaIII\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SygnalizacjaII\Messages.en.resx" />
+    <EmbeddedResource Include="SygnalizacjaII\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sygnalizacja\Messages.en.resx" />
+    <EmbeddedResource Include="Sygnalizacja\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Properties\Sygnalizacja.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Sygnalizacja.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\ReactorPL.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ACMotor.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ACMotor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="Help\ACMotorPL.htm" />
+    <None Include="PLCEmulator_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Reactor.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Reactor.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\podstawa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\ciepla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\wirnik_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\wirnik_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zimna_chlodzenie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zimna_main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zimna_zawA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zimna_zawB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zimna_zawOdp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Reactor\zawory\a1.png" />
+    <Resource Include="Reactor\zawory\a2.png" />
+    <Resource Include="Reactor\zawory\z1.png" />
+    <Resource Include="Reactor\zawory\z2.png" />
+    <Resource Include="Reactor\zawory\z3.png" />
+    <Resource Include="Reactor\zawory\z4.png" />
+    <Resource Include="Reactor\zawory\z5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\ciezarek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\napisy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\otwarte_0_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\otwarte_i10.png" />
+    <Resource Include="ACMotor\otwarte_i9.png" />
+    <Resource Include="ACMotor\otwarte_sk1.png" />
+    <Resource Include="ACMotor\otwarte_sk2.png" />
+    <Resource Include="ACMotor\otwarte_sk3.png" />
+    <Resource Include="ACMotor\otwarte_sk4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\uklad.png" />
+    <Resource Include="ACMotor\ustawienie_gwiazda.png" />
+    <Resource Include="ACMotor\ustawienie_trojkat.png" />
+    <Resource Include="ACMotor\zamkniete_0_24.png" />
+    <Resource Include="ACMotor\zamkniete_i10.png" />
+    <Resource Include="ACMotor\zamkniete_i9.png" />
+    <Resource Include="ACMotor\zamkniete_sk1.png" />
+    <Resource Include="ACMotor\zamkniete_sk2.png" />
+    <Resource Include="ACMotor\zamkniete_sk3.png" />
+    <Resource Include="ACMotor\zamkniete_sk4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\ButtonOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ACMotor\ButtonOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\SygnalizacjaEN.htm" />
+    <Content Include="Help\SygnalizacjaIIEN.htm" />
+    <Content Include="Help\SygnalizacjaIIIEN.htm" />
+    <Content Include="Help\SygnalizacjaIIIPL.htm" />
+    <Content Include="Help\SygnalizacjaIIPL.htm" />
+    <Content Include="Help\SygnalizacjaPL.htm" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd8_skret_2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd6_skret_2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd9_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd8_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd7_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd6_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd4_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd3_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd2_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd1_skret.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_15.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_14.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_13.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_12.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_11.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_10.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_8.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_7.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_6.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_5.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_4.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_3.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zolte_1.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_15.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_14.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_13.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_12.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_11.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_10.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_9.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_8.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_7.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_6.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_5.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_4.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_3.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\zielone_1.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_15.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_14.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_13.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_12.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_11.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_10.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_9.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_8.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_7.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_6.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_5.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_4.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_3.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\czerwone_1.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd10.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd9.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd8.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd7.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd6.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd5.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd4.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd3.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd2.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\pojazd1.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\objasnienie.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\sygnalizacje.png" />
+    <Resource Include="SygnalizacjaIII\wizualizacje\skrzyzowanie.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_6_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_3_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\sygnalizacje.png" />
+    <Resource Include="Sygnalizacja\obrazy\skrzyzowanie.jpg" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_6_skret_2.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_6_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_5_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_4_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_3_skret_2.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_3_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_2_skret.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd_1_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacje.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\ciuchcia.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_8_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_7_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_5_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_4_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_2_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_1_skret.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\objasnienie.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\buttonON.jpg" />
+    <Resource Include="SygnalizacjaII\wizualizacje\buttonOFF.jpg" />
+    <Resource Include="SygnalizacjaII\wizualizacje\uwaga_pociag.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\przycisk_pociag_nieaktywny.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\przycisk_pociag_aktywny.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\szlaban_zamkniety.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\szlaban_otwarty.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_10.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_9.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_8_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_8_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_8_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_7_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_7_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_7_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_6_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_6_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_6_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_5_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_5_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_5_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_4_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_4_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_4_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_3_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_3_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_3_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_2_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_2_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_2_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_1_zolte.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_1_zielone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\sygnalizacja_1_czerwone.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_8.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_7.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_6.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_5.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_4.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_3.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_2.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\pojazd_1.png" />
+    <Resource Include="SygnalizacjaII\wizualizacje\skrzyzowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\objasnienie.jpg" />
+    <Resource Include="Sygnalizacja\obrazy\strzalka_2_brak.png" />
+    <Resource Include="Sygnalizacja\obrazy\strzalka_2.png" />
+    <Resource Include="Sygnalizacja\obrazy\strzalka_1_brak.png" />
+    <Resource Include="Sygnalizacja\obrazy\strzalka_1.png" />
+    <Resource Include="Sygnalizacja\obrazy\buttonON.jpg" />
+    <Resource Include="Sygnalizacja\obrazy\buttonOFF.jpg" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd6.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd5.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd4.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd3.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd2.png" />
+    <Resource Include="Sygnalizacja\obrazy\pojazd1.png" />
+    <Resource Include="Sygnalizacja\obrazy\6_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\6_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\6_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\6_czerwone.png" />
+    <Resource Include="Sygnalizacja\obrazy\5_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\5_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\5_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\5_czerwone.png" />
+    <Resource Include="Sygnalizacja\obrazy\4_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\4_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\4_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\4_czerwone.png" />
+    <Resource Include="Sygnalizacja\obrazy\3_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\3_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\3_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\3_czerwone.png" />
+    <Resource Include="Sygnalizacja\obrazy\2_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\2_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\2_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\2_czerwone.png" />
+    <Resource Include="Sygnalizacja\obrazy\1_zolte.png" />
+    <Resource Include="Sygnalizacja\obrazy\1_zielone.png" />
+    <Resource Include="Sygnalizacja\obrazy\1_przygotowanie.png" />
+    <Resource Include="Sygnalizacja\obrazy\1_czerwone.png" />
+    <Resource Include="icona.ico" />
+    <Resource Include="ACMotor\uklad_n_new.png" />
+    <Resource Include="ACMotor\silnik_on.png" />
+    <Resource Include="ACMotor\silnik_off.png" />
+    <Content Include="Help\ACMotorEN.htm" />
+    <Content Include="Help\ReactorEN.htm" />
+    <EmbeddedResource Include="mpusbapi.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLCCaptions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLCSigGenComm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="en\PLCEmulator.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Help\ACMotorEN.htm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Help\ReactorEN.htm">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.mshtml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
