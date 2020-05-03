@@ -1,0 +1,32 @@
+﻿<Window x:Class="PLCEmulator.ACMotor.ACMotorSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    MinHeight="90" MinWidth="200" Width="300" Height="90">
+    <Window.Resources>
+        <Style x:Key="myButton" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="5,1,5,1"/>
+        </Style>
+        <Style x:Key="myLabel" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Name="labelMoveingSpeed" Style="{StaticResource myLabel}">labelMoveingSpeed</Label>
+            <TextBox Name="txtBoxMoveingSpeed" Height="20" MaxLines="1" MaxLength="3">txtBoxMoveingSpeed</TextBox>
+            <Label Style="{StaticResource myLabel}">[%/s]</Label>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+            <Button Name="buttonClose" Style="{StaticResource myButton}" Click="buttonClose_Click">buttonClose</Button>
+            <Button Name="buttonSave" Style="{StaticResource myButton}" Click="buttonSave_Click">buttonSave</Button>
+        </StackPanel>
+    </Grid>
+</Window>

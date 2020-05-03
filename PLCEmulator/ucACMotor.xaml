@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="PLCEmulator.ACMotor.ucACMotor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    MinHeight="300" MinWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="myButton" TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="30"/>
+        </Style>
+        <Style x:Key="myLabel" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="myCaption" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="56"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0">
+                <Canvas Width="2700" Height="1900">
+                    <Image Source="uklad_n_new.png"/>
+                    <Image Source="silnik_on.png" Name="imgMotorOn" Visibility="Hidden"/>
+                    <Image Source="silnik_off.png" Name="imgMotorOff"/>
+                    <Image Source="ciezarek.png" Name="imgWeight"/>
+                    <Image Source="napisy.png"/>
+                    <Image Source="ustawienie_gwiazda.png" Name="imgY"/>
+                    <Image Source="ustawienie_trojkat.png" Name="imgD"/>
+                    <Image Source="otwarte_0_24.png" Name="img24VOpen" Visibility="Hidden"/>
+                    <Image Source="otwarte_i9.png" Name="imgI9Open" Visibility="Hidden"/>
+                    <Image Source="otwarte_i10.png" Name="imgI10Open" Visibility="Hidden"/>
+                    <Image Source="otwarte_sk1.png" Name="imgSK1Open"/>
+                    <Image Source="otwarte_sk2.png" Name="imgSK2Open"/>
+                    <Image Source="otwarte_sk3.png" Name="imgSK3Open"/>
+                    <Image Source="otwarte_sk4.png" Name="imgSK4Open"/>
+                    <Image Source="zamkniete_0_24.png" Name="img24VClose"/>
+                    <Image Source="zamkniete_i9.png" Name="imgI9Close"/>
+                    <Image Source="zamkniete_i10.png" Name="imgI10Close"/>
+                    <Image Source="zamkniete_sk1.png" Name="imgSK1Close" Visibility="Hidden"/>
+                    <Image Source="zamkniete_sk2.png" Name="imgSK2Close" Visibility="Hidden"/>
+                    <Image Source="zamkniete_sk3.png" Name="imgSK3Close" Visibility="Hidden"/>
+                    <Image Source="zamkniete_sk4.png" Name="imgSK4Close" Visibility="Hidden"/>
+                    <Label Name="labelWarning" HorizontalContentAlignment="Center" Canvas.Top="600" Width="2700" FontSize="380" Foreground="Red" Opacity="0.4" FontWeight="Bold" Visibility="Hidden"/>
+                    <Label Name="labelMsgWarning" HorizontalContentAlignment="Center" Canvas.Top="1000" Width="2700" FontSize="180" Foreground="Red" Opacity="0.4" Visibility="Hidden"/>
+                    <Label Name="labelDI1" Canvas.Left="163.448" Canvas.Top="432.89" Style="{StaticResource myCaption}">Q1</Label>
+                    <Label Name="labelDI2" Canvas.Left="669.838" Canvas.Top="432.89" Style="{StaticResource myCaption}">Q2</Label>
+                    <Label Name="labelDI3" Canvas.Left="1629.25" Canvas.Top="432.89" Style="{StaticResource myCaption}">Q3</Label>
+                    <Label Name="labelDI4" Canvas.Left="2145.829" Canvas.Top="432.89" Style="{StaticResource myCaption}">Q4</Label>
+                    <Label Name="labelDO5" Canvas.Left="503.75" Canvas.Top="733.35" Style="{StaticResource myCaption}">I5</Label>
+                    <Label Name="labelDO6" Canvas.Left="1006.447" Canvas.Top="733.35" Style="{StaticResource myCaption}">I6</Label>
+                    <Label Name="labelDO7" Canvas.Left="1968.71" Canvas.Top="733.35" Style="{StaticResource myCaption}">I7</Label>
+                    <Label Name="labelDO8" Canvas.Left="2484.341" Canvas.Top="733.35" Style="{StaticResource myCaption}">I8</Label>
+                    <Label Name="labelDO9" Canvas.Left="43.406" Canvas.Top="1709.262" Style="{StaticResource myCaption}" Width="203.846" HorizontalContentAlignment="Right">I9</Label>
+                    <Label Name="labelDO10" Canvas.Left="2404.722" Canvas.Top="1709.262" Style="{StaticResource myCaption}">I10</Label>
+                    <Label Name="labelDO11" Canvas.Left="150.118" Canvas.Top="352.158" Style="{StaticResource myCaption}" Width="186.371" HorizontalContentAlignment="Center">I11</Label>
+                    <Label Name="labelDO12" Canvas.Left="150.118" Canvas.Top="1197.684" Style="{StaticResource myCaption}" Width="186.371" HorizontalContentAlignment="Center">I12</Label>
+                </Canvas>
+            </Viewbox>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <Label HorizontalAlignment="Center" Name="labelDO1">I1</Label>
+                <Image Source="ButtonOn.png" Style="{StaticResource myButton}" Visibility="Collapsed" Name="buttonRightOn" MouseLeftButtonUp="buttonRightOn_MouseLeftButtonUp" MouseLeave="buttonRightOn_MouseLeave"/>
+                <Image Source="ButtonOff.png" Style="{StaticResource myButton}" Visibility="Visible" Name="buttonRightOff" MouseLeftButtonDown="buttonRightOff_MouseLeftButtonDown"/>
+                <Label HorizontalAlignment="Center" Name="labelRotateRight"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Label HorizontalAlignment="Center" Name="labelDO2">I2</Label>
+                <Image Source="ButtonOn.png" Style="{StaticResource myButton}" Visibility="Collapsed" Name="buttonLeftOn" MouseLeftButtonUp="buttonLeftOn_MouseLeftButtonUp" MouseLeave="buttonLeftOn_MouseLeave"/>
+                <Image Source="ButtonOff.png" Style="{StaticResource myButton}" Visibility="Visible" Name="buttonLeftOff" MouseLeftButtonDown="buttonLeftOff_MouseLeftButtonDown"/>
+                <Label HorizontalAlignment="Center" Name="labelRotateLeft"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="2">
+                <Label HorizontalAlignment="Center" Name="labelDO3">I3</Label>
+                <Image Source="ButtonOn.png" Style="{StaticResource myButton}" Visibility="Collapsed" Name="buttonStopOn" MouseLeftButtonDown="buttonStopOn_MouseLeftButtonDown"/>
+                <Image Source="ButtonOff.png" Style="{StaticResource myButton}" Visibility="Visible" Name="buttonStopOff" MouseLeftButtonUp="buttonStopOff_MouseLeftButtonUp" MouseLeave="buttonStopOff_MouseLeave"/>
+                <Label HorizontalAlignment="Center" Name="labelStop"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="3">
+                <Label HorizontalAlignment="Center" Name="labelDO4">I4</Label>
+                <Image Source="ButtonOn.png" Style="{StaticResource myButton}" Visibility="Collapsed" Name="buttonOverloadOn" MouseLeftButtonDown="buttonOverloadOn_MouseLeftButtonDown"/>
+                <Image Source="ButtonOff.png" Style="{StaticResource myButton}" Visibility="Visible" Name="buttonOverloadOff" MouseLeftButtonUp="buttonOverloadOff_MouseLeftButtonUp" MouseLeave="buttonOverloadOff_MouseLeave"/>
+                <Label HorizontalAlignment="Center" Name="labelOverload"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Name="stackPanelSterring">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Label Style="{StaticResource myLabel}" Name="lblSimulationSpeed"/>
+                    <Label Style="{StaticResource myLabel}" Content="{Binding ElementName=sliderFastness, Path=Value}"/>
+                    <Label Style="{StaticResource myLabel}">[ms]</Label>
+                    <Button Name="buttonPauseStart" Margin="30 2 2 2" Click="buttonPauseStart_Click"></Button>
+                </StackPanel>
+                <Label HorizontalAlignment="Right" Name="labelState" Foreground="BlueViolet" Margin="2" VerticalAlignment="Center"></Label>
+            </Grid>
+            <Slider ValueChanged="sliderFastness_ValueChanged" Name="sliderFastness" Minimum="5" Maximum="500" TickFrequency="5" IsSnapToTickEnabled="True"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
